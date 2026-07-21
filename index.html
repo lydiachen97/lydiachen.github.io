@@ -33,37 +33,36 @@ header{position:sticky;top:0;z-index:60;backdrop-filter:blur(8px);background:lin
 .lang button.active{background:var(--ink);color:var(--cream)}
 .lang button:hover:not(.active){background:var(--cream-2)}
 
-.hero{padding:40px 0 30px;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}
+.hero{position:relative;padding:60px 0 44px;min-height:64vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero-inner{max-width:640px;margin:0 auto;position:relative;z-index:2}
 .hi{font-family:var(--hand);font-size:1.9rem;color:var(--coral);transform:rotate(-2deg);display:inline-block}
-.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(3.4rem,8vw,5.6rem);line-height:.98;letter-spacing:-.02em;margin:.1em 0}
+.hero h1{font-family:var(--hand);font-weight:700;font-size:clamp(4rem,10vw,7rem);line-height:.92;letter-spacing:.01em;margin:0 0 2px}
 .hero h1 em{font-style:italic;color:var(--coral)}
-.kicker{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,2.6vw,1.5rem);color:var(--ink-soft);margin-top:6px}
-.thesis{margin-top:20px;max-width:460px;font-size:1.05rem;color:var(--ink-soft)}
-.hand-note{font-family:var(--hand);font-size:1.35rem;margin-top:16px;transform:rotate(-1.4deg)}
+.kicker{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--ink-soft);margin-top:4px}
+.thesis{font-family:var(--mono);font-size:clamp(.82rem,1.5vw,.98rem);line-height:1.95;color:var(--ink-soft);max-width:520px;margin:22px auto 0}
+.hand-note{font-family:var(--hand);font-size:1.3rem;margin-top:22px}
 .hand-note .under{border-bottom:2.5px wavy var(--butter)}
-.cta-row{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.cta-row{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:30px;font-weight:500;font-size:.92rem;border:2px solid var(--ink);transition:transform .16s,background .16s,color .16s}
 .btn.primary{background:var(--coral);border-color:var(--coral);color:#fff}
 .btn.primary:hover{transform:translateY(-3px) rotate(-1deg);background:var(--coral-deep);border-color:var(--coral-deep)}
 .btn.ghost{background:var(--card)}
 .btn.ghost:hover{transform:translateY(-3px) rotate(1deg);background:var(--ink);color:var(--cream)}
 
-.collage{position:relative;height:460px}
+.decor{position:absolute;inset:0;z-index:1;pointer-events:none}
 .polaroid{position:absolute;background:#fff;padding:10px 10px 34px;border-radius:4px;box-shadow:0 10px 26px rgba(43,39,35,.16);transition:transform .25s,box-shadow .25s}
 .polaroid .ph{width:100%;height:100%;border-radius:2px;display:grid;place-items:center;font-size:2.2rem}
 .polaroid .cap{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:var(--hand);font-size:1.05rem}
 .polaroid:hover{transform:rotate(0) scale(1.04);box-shadow:0 16px 34px rgba(43,39,35,.24);z-index:5}
-.p1{width:172px;height:210px;top:6px;left:8%;transform:rotate(-7deg)}.p1 .ph{background:linear-gradient(135deg,#F4C95D,#E8664E)}
-.p2{width:150px;height:186px;top:24px;right:6%;transform:rotate(6deg)}.p2 .ph{background:linear-gradient(135deg,#87A9C9,#7FA98F)}
-.p3{width:158px;height:150px;bottom:20px;left:26%;transform:rotate(3deg)}.p3 .ph{background:linear-gradient(135deg,#A488C0,#87A9C9);height:100%}
-.stamp{position:absolute;bottom:8px;right:14%;width:104px;height:104px;border:3px solid var(--coral);border-radius:8px;display:grid;place-items:center;color:var(--coral);transform:rotate(-12deg);background:rgba(232,102,78,.06);box-shadow:inset 0 0 0 4px rgba(232,102,78,.12)}
+.p1{width:150px;height:184px;top:6%;left:2%;transform:rotate(-8deg)}.p1 .ph{background:linear-gradient(135deg,#F4C95D,#E8664E)}
+.p2{width:140px;height:172px;bottom:8%;left:5%;transform:rotate(5deg)}.p2 .ph{background:linear-gradient(135deg,#87A9C9,#7FA98F)}
+.p3{width:150px;height:186px;top:9%;right:3%;transform:rotate(7deg)}.p3 .ph{background:linear-gradient(135deg,#A488C0,#87A9C9);height:100%}
+.stamp{position:absolute;bottom:12%;right:6%;width:104px;height:104px;border:3px solid var(--coral);border-radius:8px;display:grid;place-items:center;color:var(--coral);transform:rotate(-12deg);background:rgba(232,102,78,.06);box-shadow:inset 0 0 0 4px rgba(232,102,78,.12)}
 .stamp .cn{font-family:'Noto Sans TC',serif;font-weight:700;font-size:1.7rem;writing-mode:vertical-rl;letter-spacing:.08em}
 .stamp .en{position:absolute;bottom:6px;font-family:var(--mono);font-size:.5rem;letter-spacing:.12em}
-.star{position:absolute;top:0;right:36%;font-size:1.8rem;animation:bob 3.4s ease-in-out infinite}
+.star{position:absolute;top:16%;left:16%;font-size:1.8rem;animation:bob 3.4s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(12deg)}}
-@media(max-width:860px){.hero{grid-template-columns:1fr;gap:8px}.collage{height:auto;display:flex;gap:14px;overflow-x:auto;padding:20px 4px 26px}
-.polaroid{position:relative!important;inset:auto!important;flex:0 0 auto;transform:rotate(0)!important}.p1,.p2,.p3{width:150px;height:180px}
-.stamp{position:relative!important;inset:auto!important;flex:0 0 auto;transform:rotate(-8deg)!important;align-self:center}.star{display:none}}
+@media(max-width:900px){.hero{min-height:auto;padding:46px 0 30px}.decor{display:none}}
 
 section{padding:64px 0}
 .mark{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,4vw,2.3rem);display:flex;align-items:center;gap:12px;margin-bottom:8px}
@@ -179,6 +178,10 @@ footer{padding:40px 0 60px;text-align:center}
 .fchip:hover{border-color:var(--coral);color:var(--coral)}
 .fontprev{margin-top:8px;padding:10px 12px;border:1.5px dashed var(--line);border-radius:9px;background:#fff;font-size:1.35rem;line-height:1.35;color:var(--ink)}
 .admin-overlay{position:fixed;inset:0;background:rgba(43,39,35,.4);z-index:75;opacity:0;pointer-events:none;transition:opacity .3s}
+.modrow{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--card)}
+.modname{font-family:var(--serif);font-weight:600}
+.modbtns button{border:1.5px solid var(--ink);background:var(--cream-2);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:1rem;margin-left:5px;color:var(--ink)}
+.modbtns button:disabled{opacity:.28;cursor:default}
 .admin-overlay.open{opacity:1;pointer-events:auto}
 @media(max-width:520px){.admin{width:100%}}
 </style>
@@ -199,20 +202,18 @@ footer{padding:40px 0 60px;text-align:center}
 
 <main class="wrap">
   <section class="hero" id="top">
-    <div>
-      <span class="hi" data-i18n="heroHi"></span>
-      <h1><span id="hero-name">Lydia</span><em>.</em></h1>
-      <p class="kicker" data-i18n="kicker"></p>
-      <p class="thesis" data-i18n="thesis"></p>
-      <p class="hand-note"><span class="under" data-i18n="handNote"></span></p>
-      <div class="cta-row"><a href="#about" class="btn primary" data-i18n="ctaContact"></a><a href="#work" class="btn ghost" data-i18n="ctaWork"></a></div>
-    </div>
-    <div class="collage" aria-hidden="true">
+    <div class="decor" aria-hidden="true">
       <div class="polaroid p1"><div class="ph" id="ph-0">📷</div><div class="cap" id="cap-0">on set ☺︎</div></div>
       <div class="polaroid p2"><div class="ph" id="ph-1">🎬</div><div class="cap" id="cap-1">youtube</div></div>
       <div class="polaroid p3"><div class="ph" id="ph-2">🌏</div><div class="cap" id="cap-2">TW → TX</div></div>
       <div class="stamp"><span class="cn" id="stamp-cn">品質</span><span class="en" id="stamp-en">PASSED ✓</span></div>
       <div class="star">✦</div>
+    </div>
+    <div class="hero-inner">
+      <h1><span id="hero-name">Lydia</span></h1>
+      <p class="kicker" data-i18n="kicker"></p>
+      <p class="thesis" data-i18n="thesis"></p>
+      <p class="hand-note"><span class="under" data-i18n="handNote"></span></p>
     </div>
   </section>
 
@@ -266,37 +267,14 @@ footer{padding:40px 0 60px;text-align:center}
 
 <footer><p class="foot-note" data-i18n="footNote"></p><p class="foot-mini" id="footer-mini">© 2026 Lydia · Yen-Yi Chen</p></footer>
 
-<button class="gear" id="gear" title="Admin">⚙</button>
-<div class="admin-overlay" id="admin-overlay"></div>
-<aside class="admin" id="admin" aria-label="Admin panel">
-  <div class="ahead">
-    <b>管理後台</b>
-    <span id="admin-actions" style="display:none;gap:6px;align-items:center">
-      <button id="btn-export">匯出</button><button id="btn-import">匯入</button><button id="btn-reset">重設</button>
-    </span>
-    <button class="x" id="btn-close">×</button>
-  </div>
-  <div class="abody">
-    <div id="login">
-      <p class="hint">輸入通關碼進入管理後台（預設 lydia）</p>
-      <div class="fld"><input id="pass-input" type="password" placeholder="通關碼" autocomplete="off"></div>
-      <button class="addbtn" id="pass-go">進入 →</button>
-      <p id="login-msg" class="hint" style="color:var(--coral)"></p>
-    </div>
-    <div id="panel" style="display:none">
-      <div class="saved" id="saved"></div>
-      <div id="msg" class="hint" style="color:var(--sage)"></div>
-      <div id="forms"></div>
-    </div>
-  </div>
-</aside>
-<input type="file" id="import-file" accept="application/json" style="display:none">
+<!-- 訪客瀏覽版：無後台 -->
 
 <script>
 /* ================= DEFAULT CONTENT ================= */
 const DEFAULTS={
   settings:{
-    juicer:"pholipholio_",
+    juicer:"",
+    igPosts:"",
     email:"Yen-Yi.Chen@UTDallas.edu",
     linkedin:"https://www.linkedin.com/in/yeni-chen97",
     instagram:"https://www.instagram.com/pholipholio_",
@@ -312,12 +290,9 @@ const DEFAULTS={
   },
   ui:{
     navStatus:{zh:"開放 SQE 機會",en:"Open to SQE roles",ko:"SQE 기회 오픈"},
-    heroHi:{zh:"嗨，我是",en:"Hi, I'm",ko:"안녕, 저는"},
     kicker:{zh:"品質 & 故事",en:"Quality & Story",ko:"품질 & 이야기"},
     thesis:{zh:"我把工程師的精準，用在把事情做好、也把故事說好——從電子廠的檢驗線，到鏡頭後面，都是。",en:"I bring an engineer's precision to getting things right — and to telling a good story. From the inspection line to behind the lens.",ko:"엔지니어의 정밀함으로 일을 제대로 해내고, 이야기도 제대로 전합니다 — 검사 라인에서 카메라 뒤까지."},
     handNote:{zh:"5 種語言 · 台灣 → 德州 ✈",en:"5 languages · Taiwan → Texas ✈",ko:"5개 언어 · 대만 → 텍사스 ✈"},
-    ctaContact:{zh:"聊聊 ☺︎",en:"Say hi ☺︎",ko:"인사하기 ☺︎"},
-    ctaWork:{zh:"看作品",en:"See work",ko:"작업 보기"},
     cookingLabel:{zh:"最近正在忙 ☺︎",en:"Currently cooking ☺︎",ko:"지금 준비 중 ☺︎"},
     cookingTitle:{zh:"在 UT Dallas 唸供應鏈管理碩士",en:"An MS in Supply Chain @ UT Dallas",ko:"UT 댈러스에서 공급망 관리 석사 중"},
     cookingBody:{zh:"把這幾年的品質經驗，升級成能看懂整條供應鏈的視角；同時在找一個能發揮 SQE 專長的舞台。噢對，還在醞釀新的 YouTube 影片 🎬",en:"Leveling up years of quality instincts into a full supply-chain view — and looking for the right SQE stage to bring it to. Also brewing some new YouTube videos 🎬",ko:"지난 몇 년의 품질 경험을 공급망 전체를 보는 시각으로 업그레이드하고, SQE 역량을 펼칠 무대를 찾는 중입니다. 아, 새 YouTube 영상도 준비 중이에요 🎬"},
@@ -357,12 +332,12 @@ const DEFAULTS={
     {greet:"안녕",name:"한국어 / Korean",lvl:{zh:"母語",en:"Native",ko:"모국어"},pct:100},
     {greet:"¡Hola!",name:"Español",lvl:{zh:"母語級 · 西語系",en:"Native · BA major",ko:"모국어급 · 전공"},pct:100},
     {greet:"Hi",name:"English",lvl:{zh:"專業工作",en:"Professional",ko:"업무 능통"},pct:85}
-  ]
+  ],
+  order:["cooking","work","other","gallery","languages","about"]
 };
 
 /* ================= STATE / STORAGE ================= */
 const LS_KEY="lydia_site_content_v1";
-const ADMIN_PASS="lydia";               // ← 管理後台通關碼（想改就改這裡）
 const LANGS=["zh","en","ko"];
 const LANG_LABEL={zh:"中",en:"EN",ko:"한"};
 const HTML_LANG={zh:"zh-Hant",en:"en",ko:"ko"};
@@ -447,10 +422,25 @@ function renderLangs(){
 }
 function renderGallery(force){
   const grid=document.getElementById("gallery-grid");
+  const posts=(STATE.settings.igPosts||"").split("\n").map(s=>s.trim()).filter(u=>u.indexOf("instagram.com")>=0);
   const feed=(STATE.settings.juicer||"").trim();
   if(force)galleryBuilt=false;
+
+  if(posts.length){
+    grid.classList.remove("juicer");grid.classList.add("embed");
+    if(!galleryBuilt){
+      grid.innerHTML=posts.map(u=>`<blockquote class="instagram-media" data-instgrm-permalink="${u}" data-instgrm-version="14"></blockquote>`).join("");
+      if(!document.getElementById("ig-embed-js")){
+        const s=document.createElement("script");s.id="ig-embed-js";s.async=true;s.src="https://www.instagram.com/embed.js";document.body.appendChild(s);
+      }
+      galleryBuilt=true;
+    }
+    if(window.instgrm&&window.instgrm.Embeds)window.instgrm.Embeds.process();
+    return;
+  }
+
   if(feed){
-    grid.classList.add("juicer");
+    grid.classList.remove("embed");grid.classList.add("juicer");
     if(!galleryBuilt){
       grid.innerHTML=`<ul class="juicer-feed" data-feed-id="${feed}" data-columns="3" data-per="9"></ul>`;
       let s=document.getElementById("juicer-js");
@@ -461,10 +451,12 @@ function renderGallery(force){
     } else if(window.juicer&&window.juicer.load){try{window.juicer.load();}catch(e){}}
     return;
   }
-  grid.classList.remove("juicer");grid.innerHTML="";
+
+  grid.classList.remove("juicer","embed");grid.innerHTML="";
 }
 function renderContent(){applyFonts();renderBrand();renderStatic();renderLinks();renderWork();renderOther();renderLangs();}
-function renderAll(){renderContent();renderGallery();}
+function applyOrder(){const main=document.querySelector("main");(STATE.order||[]).forEach(id=>{const el=document.getElementById(id);if(el)main.appendChild(el);});}
+function renderAll(){renderContent();renderGallery();applyOrder();}
 
 function setLang(lang){
   LANG=lang;document.documentElement.setAttribute("lang",HTML_LANG[lang]);
@@ -475,245 +467,6 @@ document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",
 
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{threshold:.1});
 function observe(){document.querySelectorAll(".cooking,.wcard,.ocard,.lcard,.about-grid,.chat").forEach(el=>{el.classList.add("reveal");io.observe(el);});}
-
-/* ================= ADMIN ================= */
-let adminLang="zh";
-const LABELS={navStatus:"狀態徽章",heroHi:"招呼語",kicker:"副標（斜體）",thesis:"自我簡介",handNote:"手寫小註記",ctaContact:"按鈕・聯絡",ctaWork:"按鈕・作品",cookingLabel:"近況・標籤",cookingTitle:"近況・標題",cookingBody:"近況・內文",s_work:"區塊標題・近期作品",s_work_sub:"　└ 副標",s_other:"區塊標題・其他",s_other_sub:"　└ 副標",s_gal:"區塊標題・社群",s_gal_sub:"　└ 副標",galView:"圖說・連結文字",galFollow:"追蹤按鈕文字",s_lang:"區塊標題・語言",s_lang_sub:"　└ 副標",s_about:"區塊標題・關於",aboutBody:"關於我・內文（可用 <br>）",chat1:"對話泡泡 1",chat2:"對話泡泡 2",chat3:"對話泡泡 3",chat4:"對話泡泡 4",footNote:"頁尾標語"};
-const HERO_KEYS=["navStatus","heroHi","kicker","thesis","handNote","ctaContact","ctaWork"];
-const COOK_KEYS=["cookingLabel","cookingTitle","cookingBody"];
-const SEC_KEYS=["s_work","s_work_sub","s_other","s_other_sub","s_gal","s_gal_sub","galView","galFollow","s_lang","s_lang_sub","s_about"];
-const ABOUT_KEYS=["aboutBody","chat1","chat2","chat3","chat4","footNote"];
-
-function esc(s){return String(s==null?"":s).replace(/"/g,"&quot;");}
-function mlLangTabs(){return `<div class="mltab">${LANGS.map(l=>`<button data-al="${l}" class="${l===adminLang?"on":""}">${LANG_LABEL[l]}</button>`).join("")}</div>`;}
-function mlField(key){
-  const o=STATE.ui[key];const multiline=(key==="thesis"||key==="cookingBody"||key==="aboutBody"||key.indexOf("chat")===0);
-  const ctrl=multiline?`<textarea data-ui="${key}" data-l="${adminLang}">${esc(o[adminLang])}</textarea>`:`<input data-ui="${key}" data-l="${adminLang}" value="${esc(o[adminLang])}">`;
-  return `<div class="fld"><label>${LABELS[key]||key}</label>${ctrl}</div>`;
-}
-function grp(title,inner,open){return `<details class="grp"${open?" open":""}><summary>${title}</summary><div class="gc">${inner}</div></details>`;}
-
-const FONT_SUG={
-  zh:{serif:["Noto Serif TC","Noto Sans TC"],sans:["Noto Sans TC","Noto Serif TC"]},
-  en:{serif:["Fraunces","Playfair Display","DM Serif Display"],sans:["Inter","Poppins","Space Grotesk"]},
-  ko:{serif:["Gowun Batang","Nanum Myeongjo","Noto Serif KR"],sans:["Noto Sans KR","Jua","Gaegu"]}
-};
-const FONT_SAMPLE={zh:"品質與故事 ☺︎ Lydia",en:"Quality & Story — Lydia",ko:"품질과 이야기 ☺︎ Lydia"};
-function fontField(lang,role){
-  const val=STATE.settings.fonts[lang][role];
-  const sug=(FONT_SUG[lang]&&FONT_SUG[lang][role])||[];
-  return `<div class="fld">
-    <label>${LANG_LABEL[lang]}・${role==="serif"?"標題":"內文"}字體 (${role})</label>
-    <input data-font="${lang}.${role}" value="${esc(val)}">
-    <div class="fontchips">${sug.map(f=>`<button type="button" class="fchip" data-fset="${lang}.${role}" data-fname="${esc(f)}">${f}</button>`).join("")}</div>
-    <div class="fontprev" data-fprev="${lang}.${role}" style="font-family:${esc(val)}">${FONT_SAMPLE[lang]}</div>
-  </div>`;
-}
-function trBtn(type){return `<button type="button" class="addbtn" data-tr="${type}" style="margin-bottom:10px">🌐 從中文翻譯 EN / 한</button>`;}
-
-function buildForms(){
-  const F=document.getElementById("forms");
-  const set=STATE.settings;
-  let html="";
-  html+=`<p class="hint" style="color:var(--ink-soft)">✍️ 以中文為基準編輯，按各區的 🌐 按鈕即可用 AI 自動翻譯 EN／한（在地化、文法校對）。完成後「匯出」content.json 推上 GitHub 即可發布。</p>`;
-
-  // Settings
-  html+=grp("⚙ 基本設定 / 連結",`
-    <div class="fld"><label>Juicer feed 名稱（社群相簿來源）</label><input data-set="juicer" value="${esc(set.juicer)}"><div class="hint">留空則不顯示相簿。到 juicer.io 建好 feed 後填入名稱。</div></div>
-    <div class="fld"><label>Email</label><input data-set="email" value="${esc(set.email)}"></div>
-    <div class="fld"><label>LinkedIn 網址</label><input data-set="linkedin" value="${esc(set.linkedin)}"></div>
-    <div class="fld"><label>Instagram 網址</label><input data-set="instagram" value="${esc(set.instagram)}"></div>
-    <div class="fld"><label>YouTube 網址</label><input data-set="youtube" value="${esc(set.youtube)}"></div>`,true);
-
-  // Brand / names
-  html+=grp("🏷️ 品牌 / 名稱",`
-    <div class="fld"><label>導覽列名稱</label><input data-set="brand" value="${esc(set.brand)}"></div>
-    <div class="fld"><label>Logo 字母</label><input data-set="monogram" value="${esc(set.monogram)}"></div>
-    <div class="fld"><label>首頁大標名字</label><input data-set="heroName" value="${esc(set.heroName)}"></div>
-    <div class="fld"><label>對話框標題</label><input data-set="imessage" value="${esc(set.imessage)}"></div>
-    <div class="fld"><label>頁尾文字</label><input data-set="footer" value="${esc(set.footer)}"></div>`);
-
-  // Hero collage
-  html+=grp("🖼️ 首頁拼貼 / 印章",
-    set.collage.map((c,i)=>`
-      <div class="fld"><label>拼貼 ${i+1}・圖示（emoji）</label><input data-sp="collage.${i}.emoji" value="${esc(c.emoji)}"></div>
-      <div class="fld"><label>拼貼 ${i+1}・小字說明</label><input data-sp="collage.${i}.cap" value="${esc(c.cap)}"></div>`).join("")+
-    `<div class="fld"><label>印章・中文字</label><input data-sp="stamp.cn" value="${esc(set.stamp.cn)}"></div>
-     <div class="fld"><label>印章・英文字</label><input data-sp="stamp.en" value="${esc(set.stamp.en)}"></div>`);
-
-  // Fonts
-  html+=grp("🔤 各語言字體（含即時預覽）",
-    LANGS.map(l=>fontField(l,"serif")+fontField(l,"sans")).join("")+
-    `<div class="hint">打 Google Fonts 的字體名稱會自動載入（可到 fonts.google.com 找）；點下方按鈕可快速套用並預覽。想用自己的字體，把字體檔給我。</div>`);
-
-  // Multilingual groups (with lang tabs)
-  html+=grp("🏠 首頁 Hero",trBtn("hero")+mlLangTabs()+HERO_KEYS.map(mlField).join(""),true);
-  html+=grp("🍳 近況 Cooking",trBtn("cook")+mlLangTabs()+COOK_KEYS.map(mlField).join(""));
-  html+=grp("🔖 區塊標題",trBtn("sec")+mlLangTabs()+SEC_KEYS.map(mlField).join(""));
-  html+=grp("💬 關於我 / 對話",trBtn("about")+mlLangTabs()+ABOUT_KEYS.map(mlField).join(""));
-
-  // Work repeater
-  html+=grp("▶ 近期作品",trBtn("work")+STATE.work.map((w,i)=>`<div class="item"><button class="del" data-del="work" data-i="${i}">刪除</button>
-    <div class="fld"><label>Emoji</label><input data-arr="work.${i}.emoji" value="${esc(w.emoji)}"></div>
-    <div class="fld"><label>標題</label><input data-arr="work.${i}.title" value="${esc(w.title)}"></div>
-    ${mlLangTabs()}
-    <div class="fld"><label>職稱 / 年份（${LANG_LABEL[adminLang]}）</label><input data-arrml="work.${i}.meta" value="${esc(w.meta[adminLang])}"></div>
-    <div class="fld"><label>描述（${LANG_LABEL[adminLang]}）</label><textarea data-arrml="work.${i}.desc">${esc(w.desc[adminLang])}</textarea></div>
-    <div class="fld"><label>標籤（逗號分隔）</label><input data-tags="work.${i}" value="${esc((w.tags||[]).join(", "))}"></div>
-    </div>`).join("")+`<button class="addbtn" data-add="work">+ 新增作品</button>`);
-
-  // Other repeater
-  html+=grp("⁕ 其他的事",trBtn("other")+STATE.other.map((o,i)=>`<div class="item"><button class="del" data-del="other" data-i="${i}">刪除</button>
-    <div class="fld"><label>Emoji</label><input data-arr="other.${i}.emoji" value="${esc(o.emoji)}"></div>
-    <div class="fld"><label>年份 / 標記</label><input data-arr="other.${i}.year" value="${esc(o.year)}"></div>
-    <div class="fld"><label>連結網址</label><input data-arr="other.${i}.url" value="${esc(o.url)}"></div>
-    ${mlLangTabs()}
-    <div class="fld"><label>標題（${LANG_LABEL[adminLang]}）</label><input data-arrml="other.${i}.title" value="${esc(o.title[adminLang])}"></div>
-    <div class="fld"><label>描述（${LANG_LABEL[adminLang]}）</label><textarea data-arrml="other.${i}.desc">${esc(o.desc[adminLang])}</textarea></div>
-    <div class="fld"><label>連結文字（${LANG_LABEL[adminLang]}）</label><input data-arrml="other.${i}.go" value="${esc(o.go[adminLang])}"></div>
-    </div>`).join("")+`<button class="addbtn" data-add="other">+ 新增項目</button>`);
-
-  // Languages repeater
-  html+=grp("✿ 語言能力",trBtn("lang")+STATE.languages.map((l,i)=>`<div class="item"><button class="del" data-del="languages" data-i="${i}">刪除</button>
-    <div class="fld"><label>打招呼</label><input data-arr="languages.${i}.greet" value="${esc(l.greet)}"></div>
-    <div class="fld"><label>語言名稱</label><input data-arr="languages.${i}.name" value="${esc(l.name)}"></div>
-    <div class="fld"><label>程度百分比 (0–100)</label><input data-arrnum="languages.${i}.pct" value="${esc(l.pct)}"></div>
-    ${mlLangTabs()}
-    <div class="fld"><label>程度標籤（${LANG_LABEL[adminLang]}）</label><input data-arrml="languages.${i}.lvl" value="${esc(l.lvl[adminLang])}"></div>
-    </div>`).join("")+`<button class="addbtn" data-add="languages">+ 新增語言</button>`);
-
-  F.innerHTML=html;
-  bindForms();
-}
-
-function getPath(obj,path){return path.split(".").reduce((a,k)=>a[k],obj);}
-function setPath(obj,path,val){const ks=path.split(".");const last=ks.pop();ks.reduce((a,k)=>a[k],obj)[last]=val;}
-
-function bindForms(){
-  const F=document.getElementById("forms");
-  // lang tabs inside admin
-  F.querySelectorAll(".mltab button").forEach(b=>b.addEventListener("click",()=>{adminLang=b.dataset.al;buildForms();}));
-  // ui multilingual
-  F.querySelectorAll("[data-ui]").forEach(inp=>inp.addEventListener("input",()=>{STATE.ui[inp.dataset.ui][inp.dataset.l]=inp.value;afterEdit();}));
-  // settings
-  F.querySelectorAll("[data-set]").forEach(inp=>inp.addEventListener("input",()=>{
-    STATE.settings[inp.dataset.set]=inp.value;afterEdit(inp.dataset.set==="juicer");}));
-  F.querySelectorAll("[data-sp]").forEach(inp=>inp.addEventListener("input",()=>{
-    setPath(STATE.settings,inp.dataset.sp,inp.value);afterEdit();}));
-  // fonts (auto-load Google Font + live preview)
-  F.querySelectorAll("[data-font]").forEach(inp=>inp.addEventListener("input",()=>{
-    const[l,k]=inp.dataset.font.split(".");STATE.settings.fonts[l][k]=inp.value;
-    loadStack(inp.value);
-    const pv=F.querySelector('[data-fprev="'+l+'.'+k+'"]');if(pv)pv.style.fontFamily=inp.value;
-    afterEdit();
-  }));
-  F.querySelectorAll(".fchip").forEach(b=>b.addEventListener("click",()=>{
-    const[l,k]=b.dataset.fset.split(".");
-    const stack="'"+b.dataset.fname+"', "+(k==="serif"?"serif":"sans-serif");
-    STATE.settings.fonts[l][k]=stack;loadGoogleFont(b.dataset.fname);
-    const inp=F.querySelector('[data-font="'+l+'.'+k+'"]');if(inp)inp.value=stack;
-    const pv=F.querySelector('[data-fprev="'+l+'.'+k+'"]');if(pv)pv.style.fontFamily=stack;
-    afterEdit();
-  }));
-  // arrays simple
-  F.querySelectorAll("[data-arr]").forEach(inp=>inp.addEventListener("input",()=>{setPath(STATE,inp.dataset.arr,inp.value);afterEdit();}));
-  F.querySelectorAll("[data-arrnum]").forEach(inp=>inp.addEventListener("input",()=>{setPath(STATE,inp.dataset.arrnum,Math.max(0,Math.min(100,parseInt(inp.value)||0)));afterEdit();}));
-  F.querySelectorAll("[data-arrml]").forEach(inp=>inp.addEventListener("input",()=>{setPath(STATE,inp.dataset.arrml+"."+adminLang,inp.value);afterEdit();}));
-  F.querySelectorAll("[data-tags]").forEach(inp=>inp.addEventListener("input",()=>{setPath(STATE,inp.dataset.tags+".tags",inp.value.split(",").map(s=>s.trim()).filter(Boolean));afterEdit();}));
-  // add / delete
-  F.querySelectorAll("[data-add]").forEach(b=>b.addEventListener("click",()=>{addItem(b.dataset.add);}));
-  F.querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click",()=>{STATE[b.dataset.del].splice(+b.dataset.i,1);saveLocal();renderAll();buildForms();}));
-  F.querySelectorAll("[data-tr]").forEach(b=>b.addEventListener("click",()=>doTranslate(b.dataset.tr,b)));
-}
-function afterEdit(rebuildGallery){saveLocal();if(rebuildGallery){renderContent();renderGallery(true);}else{renderContent();}}
-function addItem(type){
-  const ml=()=>({zh:"",en:"",ko:""});
-  if(type==="work")STATE.work.push({emoji:"✨",title:"New",meta:ml(),desc:ml(),tags:[]});
-  if(type==="other")STATE.other.push({emoji:"✦",title:ml(),year:"",desc:ml(),go:ml(),url:"#"});
-  if(type==="languages")STATE.languages.push({greet:"Hi",name:"Language",lvl:ml(),pct:50});
-  saveLocal();renderAll();buildForms();
-}
-
-/* ===== AI 翻譯：中文為準 → EN / 한（在地化、文法校對；在 Claude.ai 預覽可用） ===== */
-const TRANSLATE_PROMPT=`You are a professional localization translator for a personal portfolio website. Translate each Traditional Chinese value into natural, grammatically correct, LOCALIZED English ("en") and Korean ("ko"). Rules: keep HTML tags such as <br> exactly; keep emojis; do NOT translate proper nouns / technical terms (Lydia, Yen-Yi Chen, Six Sigma, 8D, SQE, PCB, PCBA, SOP, FPC, UT Dallas, JSOM, MEKTEC, Flexium, TITAS, YouTube, Instagram) and keep all numbers/percentages. Warm, friendly, professional tone. Return ONLY minified JSON (no markdown, no commentary): an object mapping each input key to {"en":"...","ko":"..."}. Input:\n`;
-async function callClaude(prompt){
-  const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
-  const data=await res.json();
-  return (data.content||[]).filter(i=>i.type==="text").map(i=>i.text).join("");
-}
-async function aiTranslate(map){
-  const txt=await callClaude(TRANSLATE_PROMPT+JSON.stringify(map));
-  const clean=txt.replace(/```json/gi,"").replace(/```/g,"").trim();
-  return JSON.parse(clean);
-}
-async function runTranslate(map,apply,btn){
-  const clean={};for(const k in map){if((map[k]||"").trim())clean[k]=map[k];}
-  if(!Object.keys(clean).length){toast("這一區沒有可翻譯的中文內容",'var(--coral)');return;}
-  const label=btn?btn.textContent:"";if(btn){btn.disabled=true;btn.textContent="🌐 翻譯中…";}
-  try{
-    const tr=await aiTranslate(clean);
-    for(const k in tr){if(tr[k])apply(k,tr[k]);}
-    saveLocal();renderContent();buildForms();toast("已用 AI 翻譯更新 EN / 한 ☺︎");
-  }catch(e){
-    toast("翻譯失敗：此環境可能無法連到 AI。把中文貼到對話裡，我幫你翻好再回填。",'var(--coral)');
-    if(btn){btn.disabled=false;btn.textContent=label;}
-  }
-}
-function doTranslate(type,btn){
-  let map={},apply;
-  const uiBatch=(keys)=>{keys.forEach(k=>map[k]=STATE.ui[k].zh);apply=(k,tr)=>{if(STATE.ui[k]){STATE.ui[k].en=tr.en;STATE.ui[k].ko=tr.ko;}};};
-  if(type==="hero")uiBatch(HERO_KEYS);
-  else if(type==="cook")uiBatch(COOK_KEYS);
-  else if(type==="sec")uiBatch(SEC_KEYS);
-  else if(type==="about")uiBatch(ABOUT_KEYS);
-  else if(type==="work"){STATE.work.forEach((w,i)=>{map["meta_"+i]=w.meta.zh;map["desc_"+i]=w.desc.zh;});apply=(k,tr)=>{const p=k.split("_"),f=p[0],i=p[1];if(STATE.work[i]){STATE.work[i][f].en=tr.en;STATE.work[i][f].ko=tr.ko;}};}
-  else if(type==="other"){STATE.other.forEach((o,i)=>{map["title_"+i]=o.title.zh;map["desc_"+i]=o.desc.zh;map["go_"+i]=o.go.zh;});apply=(k,tr)=>{const p=k.split("_"),f=p[0],i=p[1];if(STATE.other[i]){STATE.other[i][f].en=tr.en;STATE.other[i][f].ko=tr.ko;}};}
-  else if(type==="lang"){STATE.languages.forEach((l,i)=>{map["lvl_"+i]=l.lvl.zh;});apply=(k,tr)=>{const i=k.split("_")[1];if(STATE.languages[i]){STATE.languages[i].lvl.en=tr.en;STATE.languages[i].lvl.ko=tr.ko;}};}
-  runTranslate(map,apply,btn);
-}
-
-/* admin open/close + gate (in-page, no browser dialogs — works inside preview/sandbox) */
-const admin=document.getElementById("admin"),overlay=document.getElementById("admin-overlay");
-let unlocked=false, resetArmed=false;
-function toast(m,color){const el=document.getElementById("msg");if(!el)return;el.textContent=m;el.style.color=color||"var(--sage)";clearTimeout(toast._t);toast._t=setTimeout(()=>el.textContent="",4500);}
-function showAdminView(){
-  document.getElementById("login").style.display=unlocked?"none":"block";
-  document.getElementById("panel").style.display=unlocked?"block":"none";
-  document.getElementById("admin-actions").style.display=unlocked?"inline-flex":"none";
-  if(unlocked)buildForms();
-}
-function openAdmin(){admin.classList.add("open");overlay.classList.add("open");showAdminView();
-  setTimeout(()=>{const p=document.getElementById("pass-input");if(!unlocked&&p)p.focus();},350);}
-function closeAdmin(){admin.classList.remove("open");overlay.classList.remove("open");}
-function tryUnlock(){const v=document.getElementById("pass-input").value;
-  if(v===ADMIN_PASS){unlocked=true;document.getElementById("login-msg").textContent="";showAdminView();}
-  else{document.getElementById("login-msg").textContent="通關碼錯誤，再試一次";}}
-document.getElementById("gear").addEventListener("click",openAdmin);
-document.getElementById("btn-close").addEventListener("click",closeAdmin);
-overlay.addEventListener("click",closeAdmin);
-document.getElementById("pass-go").addEventListener("click",tryUnlock);
-document.getElementById("pass-input").addEventListener("keydown",(e)=>{if(e.key==="Enter")tryUnlock();});
-if(location.hash==="#admin")setTimeout(openAdmin,300);
-
-/* export / import / reset (in-page feedback) */
-document.getElementById("btn-export").addEventListener("click",()=>{
-  const blob=new Blob([JSON.stringify(STATE,null,2)],{type:"application/json"});
-  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="content.json";
-  document.body.appendChild(a);a.click();a.remove();
-  toast("已下載 content.json — 上傳到主機（與網頁同資料夾）即可發布 ☺︎");
-});
-document.getElementById("btn-import").addEventListener("click",()=>document.getElementById("import-file").click());
-document.getElementById("import-file").addEventListener("change",(e)=>{
-  const f=e.target.files[0];if(!f)return;const r=new FileReader();
-  r.onload=()=>{try{STATE=merge(DEFAULTS,JSON.parse(r.result));saveLocal();renderAll();buildForms();toast("匯入成功 ☺︎");}catch(err){toast("檔案格式有誤",'var(--coral)');}};
-  r.readAsText(f);
-});
-document.getElementById("btn-reset").addEventListener("click",(e)=>{
-  if(!resetArmed){resetArmed=true;e.target.textContent="確認?";toast("再按一次「確認?」會還原全部內容",'var(--coral)');
-    setTimeout(()=>{resetArmed=false;e.target.textContent="重設";},3000);return;}
-  resetArmed=false;e.target.textContent="重設";STATE=clone(DEFAULTS);saveLocal();renderAll();buildForms();toast("已還原預設內容");
-});
 
 /* ================= BOOT ================= */
 async function boot(){
