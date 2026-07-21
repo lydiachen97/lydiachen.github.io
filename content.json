@@ -1,11 +1,12 @@
 {
   "settings": {
     "juicer": "",
-    "igPosts": "",
+    "igPosts": "https://www.instagram.com/p/DWLAUSHDlLY/\nhttps://www.instagram.com/p/DWK_gvZDupn/\nhttps://www.instagram.com/p/DWK-2xDDjFN/",
     "email": "Yen-Yi.Chen@UTDallas.edu",
     "linkedin": "https://www.linkedin.com/in/yeni-chen97",
     "instagram": "https://www.instagram.com/pholipholio_",
     "youtube": "#",
+    "customFonts": [],
     "brand": "Lydia",
     "monogram": "L",
     "heroName": "Lydia",
@@ -32,23 +33,29 @@
     "fonts": {
       "en": {
         "serif": "'Fraunces', serif",
-        "sans": "'Inter', sans-serif"
+        "sans": "'Inter', sans-serif",
+        "hand": "'Caveat', cursive",
+        "mono": "'Space Mono', monospace"
       },
       "zh": {
         "serif": "'Fraunces','Noto Serif TC', serif",
-        "sans": "'Inter','Noto Sans TC', sans-serif"
+        "sans": "'Inter','Noto Sans TC', sans-serif",
+        "hand": "'Caveat','Noto Sans TC', cursive",
+        "mono": "'Space Mono','Noto Sans TC', monospace"
       },
       "ko": {
         "serif": "'Fraunces','Gowun Batang', serif",
-        "sans": "'Inter','Noto Sans KR', sans-serif"
+        "sans": "'Inter','Noto Sans KR', sans-serif",
+        "hand": "'Caveat','Noto Sans KR', cursive",
+        "mono": "'Space Mono','Noto Sans KR', monospace"
       }
     }
   },
   "ui": {
     "navStatus": {
-      "zh": "開放 SQE 機會",
-      "en": "Open to SQE roles",
-      "ko": "SQE 기회 오픈"
+      "zh": "需要供應鏈實習機會",
+      "en": "Seeking a supply chain internship",
+      "ko": "공급망 인턴십을 찾는 중"
     },
     "kicker": {
       "zh": "品質 & 故事",
