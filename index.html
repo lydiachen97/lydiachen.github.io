@@ -39,4 +39,490 @@ header{position:sticky;top:0;z-index:60;backdrop-filter:blur(8px);background:lin
 .hero h1{font-family:var(--hand);font-weight:700;font-size:clamp(2.9rem,11vw,7rem);line-height:.92;letter-spacing:.01em;margin:0 0 2px}
 .hero h1 em{font-style:italic;color:var(--coral)}
 .kicker{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--ink-soft);margin-top:4px}
-.thesis{font-family:var(--mono);font-size:clamp(.82rem,1.5vw,.98rem);line-height:1.95;color:var(--ink-soft);max-
+.thesis{font-family:var(--mono);font-size:clamp(.82rem,1.5vw,.98rem);line-height:1.95;color:var(--ink-soft);max-width:520px;margin:22px auto 0}
+.hand-note{font-family:var(--note);font-size:1.3rem;margin-top:22px}
+.hand-note .under{border-bottom:2.5px wavy var(--butter)}
+.cta-row{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:30px;font-weight:500;font-size:.92rem;border:2px solid var(--ink);transition:transform .16s,background .16s,color .16s}
+.btn.primary{background:var(--coral);border-color:var(--coral);color:#fff}
+.btn.primary:hover{transform:translateY(-3px) rotate(-1deg);background:var(--coral-deep);border-color:var(--coral-deep)}
+.btn.ghost{background:var(--card)}
+.btn.ghost:hover{transform:translateY(-3px) rotate(1deg);background:var(--ink);color:var(--cream)}
+
+.decor{position:absolute;inset:0;z-index:1;pointer-events:none}
+.polaroid{position:absolute;background:#fff;padding:10px 10px 34px;border-radius:4px;box-shadow:0 10px 26px rgba(43,39,35,.16);transition:transform .25s,box-shadow .25s}
+.polaroid .ph{width:100%;height:100%;border-radius:2px;display:grid;place-items:center;font-size:2.2rem}
+.polaroid .cap{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:var(--hand);font-size:1.05rem}
+.polaroid:hover{transform:rotate(0) scale(1.04);box-shadow:0 16px 34px rgba(43,39,35,.24);z-index:5}
+.p1{width:150px;height:184px;top:6%;left:2%;transform:rotate(-8deg)}.p1 .ph{background:linear-gradient(135deg,#F4C95D,#E8664E)}
+.p2{width:140px;height:172px;bottom:8%;left:5%;transform:rotate(5deg)}.p2 .ph{background:linear-gradient(135deg,#87A9C9,#7FA98F)}
+.p3{width:150px;height:186px;top:9%;right:3%;transform:rotate(7deg)}.p3 .ph{background:linear-gradient(135deg,#A488C0,#87A9C9);height:100%}
+.stamp{position:absolute;bottom:12%;right:6%;width:104px;height:104px;border:3px solid var(--coral);border-radius:8px;display:grid;place-items:center;color:var(--coral);transform:rotate(-12deg);background:rgba(232,102,78,.06);box-shadow:inset 0 0 0 4px rgba(232,102,78,.12)}
+.stamp .cn{font-family:'Noto Sans TC',serif;font-weight:700;font-size:1.7rem;writing-mode:vertical-rl;letter-spacing:.08em}
+.stamp .en{position:absolute;bottom:6px;font-family:var(--mono);font-size:.5rem;letter-spacing:.12em}
+.star{position:absolute;top:16%;left:16%;font-size:1.8rem;animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-9px) rotate(12deg)}}
+@media(max-width:900px){.hero{min-height:auto;padding:46px 0 30px}.decor{display:none}}
+
+section{padding:64px 0}
+@media(min-width:1700px){:root{--max:1520px}}
+@media(min-width:2000px){html{font-size:18.5px}}
+@media(max-width:900px){section{padding:52px 0}.wrap{padding:0 22px}}
+@media(max-width:600px){
+  section{padding:40px 0}
+  .wrap{padding:0 16px}
+  .hero{padding:32px 0 26px}
+  .wcard{padding:15px;gap:16px}
+  .wcard .thumb{height:150px}
+  .ocard{padding:18px}
+  .nav{height:60px}
+}
+.mark{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,4vw,2.3rem);display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.mark .sym{color:var(--coral)}
+.sub{color:var(--ink-soft);margin-bottom:32px}
+.cooking{background:var(--ink);color:var(--cream);border-radius:26px;padding:38px;position:relative;overflow:hidden}
+.cooking::after{content:"🍳";position:absolute;right:26px;top:22px;font-size:2.4rem;animation:bob 4s ease-in-out infinite}
+.cooking .lbl{font-family:var(--hand);font-size:1.5rem;color:var(--butter)}
+.cooking h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.6vw,2.1rem);margin:8px 0 14px;max-width:640px}
+.cooking p{color:#E9E2D4;max-width:660px}
+.cooking .tape{position:absolute;left:-30px;top:24px;width:120px;height:26px;background:rgba(244,201,93,.5);transform:rotate(-38deg)}
+
+.work{display:grid;gap:26px}
+.wcard{display:grid;grid-template-columns:300px 1fr;gap:26px;background:var(--card);border:2px solid var(--ink);border-radius:22px;padding:20px;align-items:center;transition:transform .2s,box-shadow .2s}
+.wcard:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:8px 8px 0 var(--ink)}
+.wcard .thumb{height:190px;border-radius:14px;display:grid;place-items:center;font-size:3rem;color:#fff}
+.wcard .thumb.photos{background:none!important;padding:0;gap:5px;overflow:hidden;place-items:stretch}
+.wcard .thumb.photos img{width:100%;height:100%;object-fit:cover;border-radius:10px;display:block}
+.wcard .thumb.photos.n1{grid-template-columns:1fr}
+.wcard .thumb.photos.n2{grid-template-columns:1fr 1fr}
+.wcard .thumb.photos.n3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}
+.wcard .thumb.photos.n3 img:first-child{grid-row:1/3}
+.wcard:nth-child(1) .thumb{background:linear-gradient(135deg,#E8664E,#F4C95D)}
+.wcard:nth-child(2) .thumb{background:linear-gradient(135deg,#87A9C9,#A488C0)}
+.wcard:nth-child(3) .thumb{background:linear-gradient(135deg,#7FA98F,#F4C95D)}
+.wcard h3{font-family:var(--serif);font-weight:600;font-size:1.5rem}
+.wmeta{font-family:var(--mono);font-size:.72rem;color:var(--coral);margin:4px 0 10px}
+.wcard p{color:var(--ink-soft);font-size:.98rem}
+.wtags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.wtags span{font-size:.76rem;background:var(--cream);border:1.5px solid var(--line);border-radius:14px;padding:4px 11px}
+@media(max-width:680px){.wcard{grid-template-columns:1fr}}
+
+.other{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.ocard{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:22px;transition:transform .18s}
+.ocard:hover{transform:translateY(-4px) rotate(.6deg)}
+.ocard .emoji{font-size:1.7rem}.ocard h4{font-family:var(--serif);font-weight:600;font-size:1.2rem;margin:8px 0 4px}
+.ocard .oy{font-family:var(--mono);font-size:.66rem;color:var(--ink-faint)}
+.ocard p{color:var(--ink-soft);font-size:.92rem;margin-top:8px}
+.ocard .go{margin-top:12px;font-family:var(--mono);font-size:.7rem;color:var(--coral);border-bottom:2px solid var(--butter);display:inline-block;padding-bottom:1px}
+@media(max-width:560px){.other{grid-template-columns:1fr}}
+
+.gallery{columns:3;column-gap:16px}
+@media(max-width:820px){.gallery{columns:2}}@media(max-width:440px){.gallery{columns:1}}
+.gtile{position:relative;display:block;break-inside:avoid;margin-bottom:16px;border-radius:16px;overflow:hidden;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .2s,box-shadow .2s}
+.gtile:hover{transform:translateY(-4px) rotate(-.5deg);box-shadow:8px 8px 0 var(--coral)}
+.gtile .media{width:100%;display:block;transition:transform .55s}.gtile:hover .media{transform:scale(1.07)}
+.gtile .ph{display:grid;place-items:center;font-size:2.6rem;color:#fff}
+.gov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;background:linear-gradient(to top,rgba(43,39,35,.85),rgba(43,39,35,.08) 55%,transparent);opacity:0;transition:opacity .3s}
+.gtile:hover .gov,.gtile:focus-visible .gov{opacity:1}
+.gov .cap{color:#fff;font-family:var(--serif);font-weight:500;font-size:1.08rem}
+.gov .view{color:#fff;font-family:var(--mono);font-size:.66rem;margin-top:5px;display:flex;align-items:center;gap:6px;opacity:.92}
+.gov .view svg{width:13px;height:13px}
+.ig-badge{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--coral);display:grid;place-items:center;transform:scale(.5);opacity:0;transition:transform .3s,opacity .3s}
+.gtile:hover .ig-badge{transform:scale(1);opacity:1}
+.gallery.juicer{column-count:1;column-gap:0}
+.gallery.juicer .juicer-feed{width:100%}
+.gallery.embed{column-count:auto;display:flex;flex-wrap:nowrap;gap:16px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory}
+.gallery.embed .instagram-media{flex:0 0 auto;margin:0!important;scroll-snap-align:start}
+.ig-follow{display:inline-flex;align-items:center;gap:9px;margin-top:26px;padding:12px 22px;border-radius:30px;border:2px solid var(--ink);background:var(--card);font-weight:500;transition:.18s}
+.ig-follow:hover{background:linear-gradient(135deg,#E8664E,#A488C0);color:#fff;border-color:transparent;transform:translateY(-3px) rotate(-1deg)}
+.ig-follow .h{font-family:var(--mono);font-size:.82rem}
+
+.langs{display:flex;flex-wrap:wrap;gap:14px}
+.lcard{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:16px 20px;min-width:150px;flex:1 1 150px;transition:transform .18s}
+.lcard:hover{transform:translateY(-4px) rotate(-1deg)}
+.lcard .greet{font-family:var(--serif);font-weight:600;font-size:1.5rem}
+.lcard .lname{font-size:.86rem;color:var(--ink-soft);margin-top:2px}
+.lcard .lbar{height:6px;background:var(--cream);border-radius:4px;margin-top:12px;overflow:hidden;border:1px solid var(--line)}
+.lcard .lbar span{display:block;height:100%;width:0;background:var(--coral);border-radius:4px;transition:width 1s cubic-bezier(.4,0,.2,1)}
+.lcard .llvl{font-family:var(--mono);font-size:.62rem;color:var(--ink-faint);margin-top:7px}
+
+.about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:36px;align-items:start}
+.about-grid p{font-size:1.08rem;color:var(--ink-soft);margin-bottom:16px}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.links a{font-family:var(--mono);font-size:.76rem;background:var(--card);border:2px solid var(--ink);border-radius:20px;padding:8px 15px;transition:.16s}
+.links a:hover{background:var(--coral);border-color:var(--coral);color:#fff;transform:translateY(-2px)}
+.chat{background:var(--card);border:2px solid var(--ink);border-radius:22px;padding:18px;box-shadow:6px 6px 0 var(--ink)}
+.chat .top{font-family:var(--mono);font-size:.66rem;color:var(--ink-faint);text-align:center;margin-bottom:12px}
+.bubble{max-width:80%;padding:9px 14px;border-radius:18px;margin-bottom:9px;font-size:.9rem;line-height:1.45}
+.bubble.them{background:var(--cream);border:1.5px solid var(--line);border-bottom-left-radius:5px}
+.bubble.me{background:var(--coral);color:#fff;margin-left:auto;border-bottom-right-radius:5px}
+@media(max-width:760px){.about-grid{grid-template-columns:1fr}}
+
+footer{padding:40px 0 60px;text-align:center}
+.foot-note{font-family:var(--hand);font-size:1.7rem}.foot-mini{font-family:var(--mono);font-size:.66rem;color:var(--ink-faint);margin-top:8px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px;border-radius:6px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* ============ ADMIN ============ */
+.gear{position:fixed;right:18px;bottom:18px;z-index:70;width:50px;height:50px;border-radius:50%;background:var(--ink);color:var(--cream);border:0;cursor:pointer;font-size:1.3rem;box-shadow:0 8px 20px rgba(43,39,35,.3);transition:transform .2s}
+.gear:hover{transform:rotate(45deg) scale(1.06)}
+.admin{position:fixed;top:0;right:0;height:100%;width:420px;max-width:100%;background:var(--cream-2);z-index:80;box-shadow:-14px 0 40px rgba(43,39,35,.2);transform:translateX(102%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+.admin.open{transform:none}
+.admin .ahead{padding:16px 18px;border-bottom:2px solid var(--ink);display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream)}
+.admin .ahead b{font-family:var(--serif);font-size:1.1rem;flex:1}
+.admin .ahead button{background:transparent;border:1.5px solid var(--cream);color:var(--cream);border-radius:16px;padding:5px 10px;font-size:.7rem;font-family:var(--mono);cursor:pointer}
+.admin .ahead .x{border:0;font-size:1.3rem;padding:0 6px}
+.abody{overflow-y:auto;padding:14px 18px 60px;flex:1}
+.saved{font-family:var(--mono);font-size:.64rem;color:var(--sage);height:14px;margin-bottom:6px}
+.grp{border:1.5px solid var(--line);border-radius:12px;margin-bottom:12px;background:var(--card);overflow:hidden}
+.grp>summary{cursor:pointer;padding:11px 14px;font-family:var(--serif);font-weight:600;font-size:1rem;list-style:none;display:flex;align-items:center;gap:8px}
+.grp>summary::-webkit-details-marker{display:none}
+.grp>summary::before{content:"▸";color:var(--coral);transition:transform .2s}
+.grp[open]>summary::before{transform:rotate(90deg)}
+.gc{padding:4px 14px 14px}
+.fld{margin-bottom:12px}
+.fld>label{display:block;font-size:.74rem;color:var(--ink-soft);margin-bottom:4px;font-weight:600}
+.fld input,.fld textarea,.fld select{width:100%;border:1.5px solid var(--line);border-radius:9px;padding:8px 10px;font-family:var(--sans);font-size:.86rem;background:var(--cream-2);color:var(--ink);resize:vertical}
+.fld textarea{min-height:52px}
+.fld select{cursor:pointer;font-size:.95rem}
+.fld input:focus,.fld textarea:focus,.fld select:focus{outline:2px solid var(--coral);border-color:var(--coral)}
+.mltab{display:flex;gap:4px;margin-bottom:5px}
+.mltab button{font-family:var(--mono);font-size:.6rem;border:1.5px solid var(--line);background:var(--cream-2);border-radius:12px;padding:3px 9px;cursor:pointer;color:var(--ink-soft)}
+.mltab button.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.item{border:1.5px dashed var(--line);border-radius:10px;padding:10px;margin-bottom:10px;position:relative}
+.item .del{position:absolute;top:8px;right:8px;background:var(--coral);color:#fff;border:0;border-radius:8px;font-size:.62rem;padding:3px 8px;cursor:pointer;font-family:var(--mono)}
+.addbtn{width:100%;border:1.5px dashed var(--coral);color:var(--coral);background:transparent;border-radius:10px;padding:8px;cursor:pointer;font-family:var(--mono);font-size:.74rem}
+.hint{font-size:.68rem;color:var(--ink-faint);margin:2px 0 8px;line-height:1.5}
+.fontchips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.fchip{font-family:var(--mono);font-size:.62rem;border:1.5px solid var(--line);background:var(--cream-2);border-radius:12px;padding:3px 8px;cursor:pointer;color:var(--ink-soft)}
+.fchip:hover{border-color:var(--coral);color:var(--coral)}
+.fontprev{margin-top:8px;padding:10px 12px;border:1.5px dashed var(--line);border-radius:9px;background:#fff;font-size:1.35rem;line-height:1.35;color:var(--ink)}
+.admin-overlay{position:fixed;inset:0;background:rgba(43,39,35,.4);z-index:75;opacity:0;pointer-events:none;transition:opacity .3s}
+.modrow{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;margin-bottom:8px;background:var(--card)}
+.modname{font-family:var(--serif);font-weight:600}
+.modbtns button{border:1.5px solid var(--ink);background:var(--cream-2);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:1rem;margin-left:5px;color:var(--ink)}
+.modbtns button:disabled{opacity:.28;cursor:default}
+#admin-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);z-index:90;background:var(--ink);color:var(--cream);padding:11px 20px;border-radius:22px;font-size:.85rem;box-shadow:0 10px 28px rgba(43,39,35,.35);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:92vw;text-align:center;line-height:1.5}
+#admin-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.admin-overlay.open{opacity:1;pointer-events:auto}
+@media(max-width:520px){.admin{width:100%}}
+</style>
+<script>window.__SEED__={"settings":{"juicer":"","igPosts":"https://www.instagram.com/p/DWLAUSHDlLY/\nhttps://www.instagram.com/p/DWK_gvZDupn/\nhttps://www.instagram.com/p/DWK-2xDDjFN/","email":"Yen-Yi.Chen@UTDallas.edu","linkedin":"https://www.linkedin.com/in/yeni-chen97","instagram":"https://www.instagram.com/pholipholio_","youtube":"#","customFonts":[],"galleryPhotos":"","brand":"Lydia","monogram":"L","heroName":"Lydia","footer":"© 2026 Lydia · Yen-Yi Chen","imessage":"iMessage","stamp":{"cn":"品質","en":"PASSED ✓"},"collage":[{"emoji":"📷","cap":"on set ☺︎"},{"emoji":"🎬","cap":"youtube"},{"emoji":"🌏","cap":"TW → TX"}],"fonts":{"en":{"serif":"'Fraunces', serif","sans":"'Inter', sans-serif","hand":"'Caveat', cursive","note":"'Caveat', cursive","mono":"'Space Mono', monospace"},"zh":{"serif":"'Fraunces','Noto Serif TC', serif","sans":"'Inter','Noto Sans TC', sans-serif","hand":"'Caveat','Noto Sans TC', cursive","note":"'Caveat','Noto Sans TC', cursive","mono":"'Space Mono','Noto Sans TC', monospace"},"ko":{"serif":"'Fraunces','Gowun Batang', serif","sans":"'Inter','Noto Sans KR', sans-serif","hand":"'Caveat','Noto Sans KR', cursive","note":"'Caveat','Noto Sans KR', cursive","mono":"'Space Mono','Noto Sans KR', monospace"}}},"ui":{"navStatus":{"zh":"需要供應鏈實習機會","en":"Seeking a supply chain internship","ko":"공급망 인턴십을 찾는 중"},"kicker":{"zh":"品質 & 故事","en":"Quality & Story","ko":"품질 & 이야기"},"thesis":{"zh":"我把工程師的精準，用在把事情做好、也把故事說好——從電子廠的檢驗線，到鏡頭後面，都是。","en":"I bring an engineer's precision to getting things right — and to telling a good story. From the inspection line to behind the lens.","ko":"엔지니어의 정밀함으로 일을 제대로 해내고, 이야기도 제대로 전합니다 — 검사 라인에서 카메라 뒤까지."},"handNote":{"zh":"5 種語言 · 台灣 → 德州 ✈","en":"5 languages · Taiwan → Texas ✈","ko":"5개 언어 · 대만 → 텍사스 ✈"},"cookingLabel":{"zh":"最近正在忙 ☺︎","en":"Currently cooking ☺︎","ko":"지금 준비 중 ☺︎"},"cookingTitle":{"zh":"在 UT Dallas 唸供應鏈管理碩士","en":"An MS in Supply Chain @ UT Dallas","ko":"UT 댈러스에서 공급망 관리 석사 중"},"cookingBody":{"zh":"把這幾年的品質經驗，升級成能看懂整條供應鏈的視角；同時在找一個能發揮 SQE 專長的舞台。噢對，還在醞釀新的 YouTube 影片 🎬","en":"Leveling up years of quality instincts into a full supply-chain view — and looking for the right SQE stage to bring it to. Also brewing some new YouTube videos 🎬","ko":"지난 몇 년의 품질 경험을 공급망 전체를 보는 시각으로 업그레이드하고, SQE 역량을 펼칠 무대를 찾는 중입니다. 아, 새 YouTube 영상도 준비 중이에요 🎬"},"s_work":{"zh":"近期作品","en":"Recently Made","ko":"최근 작업"},"s_work_sub":{"zh":"把品質做到能被量化的那種認真。","en":"The kind of quality work you can actually put a number on.","ko":"숫자로 증명할 수 있는 품질 작업."},"s_other":{"zh":"其他的事","en":"Other Things","ko":"그 외"},"s_other_sub":{"zh":"工作以外，讓生活有顏色的那些。","en":"The things outside work that keep life colorful.","ko":"일 밖에서 삶을 다채롭게 하는 것들."},"s_gal":{"zh":"社群 & 視覺創作","en":"Visual & Social","ko":"비주얼 & 소셜"},"s_gal_sub":{"zh":"我最近期的 Instagram 貼文——點任一則會在新視窗打開原貼文 ☺︎","en":"My latest posts from Instagram — tap any to open the original in a new tab ☺︎","ko":"인스타그램 최신 게시물 — 누르면 새 탭에서 원본이 열려요 ☺︎"},"galView":{"zh":"在 Instagram 上看","en":"View on Instagram","ko":"인스타그램에서 보기"},"galFollow":{"zh":"→ 追蹤","en":"→ Follow","ko":"→ 팔로우"},"s_lang":{"zh":"五種語言打招呼","en":"Say hi in five","ko":"5개 언어로 인사"},"s_lang_sub":{"zh":"台灣長大、西語系畢業、韓語也是母語——溝通從不卡關。","en":"Grew up in Taiwan, a Spanish major, native in Korean too — communication is never the bottleneck.","ko":"대만에서 자라고, 스페인어 전공에, 한국어도 모국어 — 소통은 늘 문제없습니다."},"s_about":{"zh":"關於我","en":"About","ko":"소개"},"aboutBody":{"zh":"我是 Lydia（Yen-Yi Chen），一個從台灣來到德州的品質工程師。過去在 MEKTEC 與 Flexium 做電子製造品質，靠 Six Sigma 和 8D 把一個個問題拆開解決，也創下 100% 出貨準確、零召回的紀錄。<br><br>大學讀的是西班牙語，所以除了中文、台語、韓語，還多會西語和英語。喜歡用鏡頭記錄生活，也在 YouTube 上分享。我相信好品質和好設計一樣，最後都是為了讓人會心一笑 ☺︎","en":"I'm Lydia (Yen-Yi Chen), a quality engineer who moved from Taiwan to Texas. I worked on electronics-manufacturing quality at MEKTEC and Flexium — taking problems apart with Six Sigma and 8D, and hitting 100% shipping accuracy and zero recalls along the way.<br><br>I majored in Spanish, so on top of Mandarin, Taiwanese and Korean, I speak Spanish and English too. I love documenting life through a lens and sharing it on YouTube. I believe good quality, like good design, is really just about making people smile ☺︎","ko":"저는 대만에서 텍사스로 온 품질 엔지니어 Lydia(Yen-Yi Chen)입니다. MEKTEC과 Flexium에서 전자 제조 품질을 담당하며 Six Sigma와 8D로 문제를 하나씩 풀었고, 100% 출하 정확도와 리콜 제로를 달성했습니다.<br><br>대학에서 스페인어를 전공해 중국어·대만어·한국어에 더해 스페인어와 영어도 구사합니다. 카메라로 일상을 기록하고 YouTube에 나누는 걸 좋아해요. 좋은 품질도 좋은 디자인처럼, 결국 사람을 웃게 하기 위한 것이라 믿습니다 ☺︎"},"chat1":{"zh":"欸你會幾種語言啊？😳","en":"wait how many languages do you speak?? 😳","ko":"너 언어 몇 개 해?? 😳"},"chat2":{"zh":"五種～中、台、韓、西、英 ☺︎","en":"five ～ Mandarin, Taiwanese, Korean, Spanish, English ☺︎","ko":"다섯 개～ 중국어, 대만어, 한국어, 스페인어, 영어 ☺︎"},"chat3":{"zh":"太扯了吧，那品質工程呢？","en":"that's wild. and the quality engineering?","ko":"대박… 품질 엔지니어링은?"},"chat4":{"zh":"零召回，謝謝 💅","en":"zero recalls, thank you 💅","ko":"리콜 제로, 감사합니다 💅"},"footNote":{"zh":"用工程師的精準，做讓人會心一笑的東西 ☺︎","en":"An engineer's precision, made to make people smile ☺︎","ko":"엔지니어의 정밀함으로, 사람을 웃게 만드는 것 ☺︎"}},"work":[{"emoji":"🔧","title":"Flexium Interconnect","meta":{"zh":"產品品質管理工程師 · 台灣 · 2022–24","en":"Product Quality Management Engineer · Taiwan · 2022–24","ko":"제품 품질 관리 엔지니어 · 대만 · 2022–24"},"desc":{"zh":"開發並導入內部數據驗證系統，把資料處理量能拉高 150%；透過檢驗流程優化與跨部門驗證，做到 100% 出貨準確，還讓年度品質稽核分數提升 69.77%。","en":"Built and deployed an internal data-verification system that raised processing capacity by 150%; hit 100% shipping accuracy through streamlined inspection and cross-functional checks, and lifted the annual audit score by 69.77%.","ko":"내부 데이터 검증 시스템을 개발·도입해 처리 능력을 150% 높였고, 검사 최적화와 부서 간 검증으로 100% 출하 정확도를 달성하며 연간 감사 점수를 69.77% 향상시켰습니다."},"tags":["Data System +150%","100% Shipping","Audit +69.77%"]},{"emoji":"🧪","title":"MEKTEC Manufacturing","meta":{"zh":"品質保證工程師 · 台灣 · 2020–22","en":"Quality Assurance Engineer · Taiwan · 2020–22","ko":"품질 보증 엔지니어 · 대만 · 2020–22"},"desc":{"zh":"用 Six Sigma 與 8D 主導重點客戶的根因分析，提升良率、減少浪費；整合客戶回饋平台讓滿意度 +15%，並嚴謹驗證檢驗清單與 SOP，達成產品零召回。","en":"Led root-cause analysis for key accounts with Six Sigma and 8D — improving yields and cutting waste; integrated customer-feedback platforms for a 15% satisfaction lift, and validated checklists and SOPs to reach zero recalls.","ko":"Six Sigma와 8D로 주요 고객의 근본 원인 분석을 주도해 수율을 높이고 낭비를 줄였으며, 고객 피드백 플랫폼 통합으로 만족도를 15% 높이고 체크리스트·SOP 검증으로 리콜 제로를 달성했습니다."},"tags":["Six Sigma · 8D","Satisfaction +15%","Zero Recalls"]}],"other":[{"emoji":"📷","title":{"zh":"攝影","en":"Photography","ko":"사진"},"year":"ongoing","desc":{"zh":"用鏡頭記錄光影、旅程與生活裡的小細節。","en":"Capturing light, travel, and the small details of everyday life.","ko":"빛과 여행, 일상의 작은 순간을 담습니다."},"go":{"zh":"看作品集 →","en":"View gallery →","ko":"갤러리 보기 →"},"url":"#"},{"emoji":"▶","title":{"zh":"YouTube 頻道","en":"YouTube Channel","ko":"YouTube 채널"},"year":"ongoing","desc":{"zh":"分享創作、留學生活與職涯學習。","en":"Sharing creative work, study-abroad life, and career learnings.","ko":"창작, 유학 생활, 커리어 이야기를 나눕니다."},"go":{"zh":"前往頻道 →","en":"Watch now →","ko":"채널 방문 →"},"url":"#"},{"emoji":"✦","title":{"zh":"TITAS 紡織展","en":"TITAS Textile Show","ko":"TITAS 섬유전"},"year":"2018","desc":{"zh":"擔任韓／中／英三語即時口譯志工，促成南韓參展商與國際買家的跨國採購洽談。","en":"Trilingual (KR/中/EN) interpreter volunteer, bridging South Korean exhibitors and global buyers to accelerate cross-border deals.","ko":"한/중/영 3개 언어 통역 봉사로 한국 전시업체와 글로벌 바이어의 거래를 도왔습니다."},"go":{"zh":"Taipei · 志工","en":"Taipei · Volunteer","ko":"타이베이 · 봉사"},"url":"#"},{"emoji":"♪","title":{"zh":"新生合唱比賽","en":"Freshman Choral","ko":"신입생 합창 대회"},"year":"2015","desc":{"zh":"統籌排練、整合編舞與聲音表現，帶著隊伍拿下全體新生組第一名 🥇","en":"Coordinated rehearsals, choreography and vocal dynamics — and led the team to 1st place among all freshman groups 🥇","ko":"연습·안무·보컬을 총괄해 전체 신입생 그룹 중 1위를 차지했습니다 🥇"},"go":{"zh":"🥇 First place","en":"🥇 First place","ko":"🥇 1위"},"url":"#"}],"languages":[{"greet":"你好","name":"中文 / Mandarin","lvl":{"zh":"母語","en":"Native","ko":"모국어"},"pct":100},{"greet":"你好","name":"台語 / Taiwanese","lvl":{"zh":"母語","en":"Native","ko":"모국어"},"pct":100},{"greet":"안녕","name":"한국어 / Korean","lvl":{"zh":"母語","en":"Native","ko":"모국어"},"pct":100},{"greet":"¡Hola!","name":"Español","lvl":{"zh":"母語級 · 西語系","en":"Native · BA major","ko":"모국어급 · 전공"},"pct":100},{"greet":"Hi","name":"English","lvl":{"zh":"專業工作","en":"Professional","ko":"업무 능통"},"pct":85}],"order":["cooking","work","other","gallery","languages","about"]};</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="nav-right">
+      <span class="pill"><span class="live">●</span> <span data-i18n="navStatus"></span></span>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="zh" class="active">中</button><button data-lang="en">EN</button><button data-lang="ko">한</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="top">
+    <div class="decor" aria-hidden="true">
+      <div class="polaroid p1"><div class="ph" id="ph-0">📷</div><div class="cap" id="cap-0">on set ☺︎</div></div>
+      <div class="polaroid p2"><div class="ph" id="ph-1">🎬</div><div class="cap" id="cap-1">youtube</div></div>
+      <div class="polaroid p3"><div class="ph" id="ph-2">🌏</div><div class="cap" id="cap-2">TW → TX</div></div>
+      <div class="stamp"><span class="cn" id="stamp-cn">品質</span><span class="en" id="stamp-en">PASSED ✓</span></div>
+      <div class="star">✦</div>
+    </div>
+    <div class="hero-inner">
+      <h1><span id="hero-name">Lydia</span></h1>
+      <p class="kicker" data-i18n="kicker"></p>
+      <p class="thesis" data-i18n="thesis"></p>
+      <p class="hand-note"><span class="under" data-i18n="handNote"></span></p>
+    </div>
+  </section>
+
+  <section id="cooking">
+    <div class="cooking reveal"><div class="tape"></div>
+      <div class="lbl" data-i18n="cookingLabel"></div>
+      <h2 data-i18n="cookingTitle"></h2><p data-i18n="cookingBody"></p></div>
+  </section>
+
+  <section id="work">
+    <h2 class="mark"><span class="sym">▶</span> <span data-i18n="s_work"></span></h2>
+    <p class="sub" data-i18n="s_work_sub"></p>
+    <div class="work" id="work-list"></div>
+  </section>
+
+  <section id="other">
+    <h2 class="mark"><span class="sym">⁕</span> <span data-i18n="s_other"></span></h2>
+    <p class="sub" data-i18n="s_other_sub"></p>
+    <div class="other" id="other-list"></div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="mark"><span class="sym">◆</span> <span data-i18n="s_gal"></span></h2>
+    <p class="sub" data-i18n="s_gal_sub"></p>
+    <div class="gallery" id="gallery-grid"></div>
+    <a class="ig-follow" id="ig-follow" target="_blank" rel="noopener noreferrer"><span id="ig-follow-icon"></span><span class="h" id="ig-handle">@pholipholio_</span> <span data-i18n="galFollow"></span></a>
+  </section>
+
+  <section id="languages">
+    <h2 class="mark"><span class="sym">✿</span> <span data-i18n="s_lang"></span></h2>
+    <p class="sub" data-i18n="s_lang_sub"></p>
+    <div class="langs" id="lang-list"></div>
+  </section>
+
+  <section id="about">
+    <h2 class="mark"><span class="sym">⌘</span> <span data-i18n="s_about"></span></h2>
+    <div class="about-grid">
+      <div><div id="about-body"></div>
+        <div class="links">
+          <a id="lnk-email"></a><a id="lnk-linkedin" target="_blank" rel="noopener">in / LinkedIn</a>
+          <a id="lnk-ig" target="_blank" rel="noopener noreferrer">◆ Instagram</a><a id="lnk-youtube" target="_blank" rel="noopener">▶ YouTube</a>
+        </div>
+      </div>
+      <div class="chat"><div class="top" id="chat-top">iMessage</div>
+        <div class="bubble them" data-i18n="chat1"></div><div class="bubble me" data-i18n="chat2"></div>
+        <div class="bubble them" data-i18n="chat3"></div><div class="bubble me" data-i18n="chat4"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><p class="foot-note" data-i18n="footNote"></p><p class="foot-mini" id="footer-mini">© 2026 Lydia · Yen-Yi Chen</p></footer>
+
+<!-- 訪客瀏覽版：無後台 -->
+
+<script>
+/* ================= DEFAULT CONTENT ================= */
+const DEFAULTS={
+  settings:{
+    juicer:"",
+    igPosts:"https://www.instagram.com/p/DWLAUSHDlLY/\nhttps://www.instagram.com/p/DWK_gvZDupn/\nhttps://www.instagram.com/p/DWK-2xDDjFN/",
+    email:"Yen-Yi.Chen@UTDallas.edu",
+    linkedin:"https://www.linkedin.com/in/yeni-chen97",
+    instagram:"https://www.instagram.com/pholipholio_",
+    youtube:"#",
+    customFonts:[],
+    galleryPhotos:"",
+    brand:"Lydia",monogram:"L",heroName:"Lydia",footer:"© 2026 Lydia · Yen-Yi Chen",imessage:"iMessage",
+    stamp:{cn:"品質",en:"PASSED ✓"},
+    collage:[{emoji:"📷",cap:"on set ☺︎"},{emoji:"🎬",cap:"youtube"},{emoji:"🌏",cap:"TW → TX"}],
+    fonts:{
+      en:{serif:"'Fraunces', serif",sans:"'Inter', sans-serif",hand:"'Caveat', cursive",note:"'Caveat', cursive",mono:"'Space Mono', monospace"},
+      zh:{serif:"'Fraunces','Noto Serif TC', serif",sans:"'Inter','Noto Sans TC', sans-serif",hand:"'Caveat','Noto Sans TC', cursive",note:"'Caveat','Noto Sans TC', cursive",mono:"'Space Mono','Noto Sans TC', monospace"},
+      ko:{serif:"'Fraunces','Gowun Batang', serif",sans:"'Inter','Noto Sans KR', sans-serif",hand:"'Caveat','Noto Sans KR', cursive",note:"'Caveat','Noto Sans KR', cursive",mono:"'Space Mono','Noto Sans KR', monospace"}
+    }
+  },
+  ui:{
+    navStatus:{zh:"需要供應鏈實習機會",en:"Seeking a supply chain internship",ko:"공급망 인턴십을 찾는 중"},
+    kicker:{zh:"品質 & 故事",en:"Quality & Story",ko:"품질 & 이야기"},
+    thesis:{zh:"我把工程師的精準，用在把事情做好、也把故事說好——從電子廠的檢驗線，到鏡頭後面，都是。",en:"I bring an engineer's precision to getting things right — and to telling a good story. From the inspection line to behind the lens.",ko:"엔지니어의 정밀함으로 일을 제대로 해내고, 이야기도 제대로 전합니다 — 검사 라인에서 카메라 뒤까지."},
+    handNote:{zh:"5 種語言 · 台灣 → 德州 ✈",en:"5 languages · Taiwan → Texas ✈",ko:"5개 언어 · 대만 → 텍사스 ✈"},
+    cookingLabel:{zh:"最近正在忙 ☺︎",en:"Currently cooking ☺︎",ko:"지금 준비 중 ☺︎"},
+    cookingTitle:{zh:"在 UT Dallas 唸供應鏈管理碩士",en:"An MS in Supply Chain @ UT Dallas",ko:"UT 댈러스에서 공급망 관리 석사 중"},
+    cookingBody:{zh:"把這幾年的品質經驗，升級成能看懂整條供應鏈的視角；同時在找一個能發揮 SQE 專長的舞台。噢對，還在醞釀新的 YouTube 影片 🎬",en:"Leveling up years of quality instincts into a full supply-chain view — and looking for the right SQE stage to bring it to. Also brewing some new YouTube videos 🎬",ko:"지난 몇 년의 품질 경험을 공급망 전체를 보는 시각으로 업그레이드하고, SQE 역량을 펼칠 무대를 찾는 중입니다. 아, 새 YouTube 영상도 준비 중이에요 🎬"},
+    s_work:{zh:"近期作品",en:"Recently Made",ko:"최근 작업"},
+    s_work_sub:{zh:"把品質做到能被量化的那種認真。",en:"The kind of quality work you can actually put a number on.",ko:"숫자로 증명할 수 있는 품질 작업."},
+    s_other:{zh:"其他的事",en:"Other Things",ko:"그 외"},
+    s_other_sub:{zh:"工作以外，讓生活有顏色的那些。",en:"The things outside work that keep life colorful.",ko:"일 밖에서 삶을 다채롭게 하는 것들."},
+    s_gal:{zh:"社群 & 視覺創作",en:"Visual & Social",ko:"비주얼 & 소셜"},
+    s_gal_sub:{zh:"我最近期的 Instagram 貼文——點任一則會在新視窗打開原貼文 ☺︎",en:"My latest posts from Instagram — tap any to open the original in a new tab ☺︎",ko:"인스타그램 최신 게시물 — 누르면 새 탭에서 원본이 열려요 ☺︎"},
+    galView:{zh:"在 Instagram 上看",en:"View on Instagram",ko:"인스타그램에서 보기"},
+    galFollow:{zh:"→ 追蹤",en:"→ Follow",ko:"→ 팔로우"},
+    s_lang:{zh:"五種語言打招呼",en:"Say hi in five",ko:"5개 언어로 인사"},
+    s_lang_sub:{zh:"台灣長大、西語系畢業、韓語也是母語——溝通從不卡關。",en:"Grew up in Taiwan, a Spanish major, native in Korean too — communication is never the bottleneck.",ko:"대만에서 자라고, 스페인어 전공에, 한국어도 모국어 — 소통은 늘 문제없습니다."},
+    s_about:{zh:"關於我",en:"About",ko:"소개"},
+    aboutBody:{zh:"我是 Lydia（Yen-Yi Chen），一個從台灣來到德州的品質工程師。過去在 MEKTEC 與 Flexium 做電子製造品質，靠 Six Sigma 和 8D 把一個個問題拆開解決，也創下 100% 出貨準確、零召回的紀錄。<br><br>大學讀的是西班牙語，所以除了中文、台語、韓語，還多會西語和英語。喜歡用鏡頭記錄生活，也在 YouTube 上分享。我相信好品質和好設計一樣，最後都是為了讓人會心一笑 ☺︎",en:"I'm Lydia (Yen-Yi Chen), a quality engineer who moved from Taiwan to Texas. I worked on electronics-manufacturing quality at MEKTEC and Flexium — taking problems apart with Six Sigma and 8D, and hitting 100% shipping accuracy and zero recalls along the way.<br><br>I majored in Spanish, so on top of Mandarin, Taiwanese and Korean, I speak Spanish and English too. I love documenting life through a lens and sharing it on YouTube. I believe good quality, like good design, is really just about making people smile ☺︎",ko:"저는 대만에서 텍사스로 온 품질 엔지니어 Lydia(Yen-Yi Chen)입니다. MEKTEC과 Flexium에서 전자 제조 품질을 담당하며 Six Sigma와 8D로 문제를 하나씩 풀었고, 100% 출하 정확도와 리콜 제로를 달성했습니다.<br><br>대학에서 스페인어를 전공해 중국어·대만어·한국어에 더해 스페인어와 영어도 구사합니다. 카메라로 일상을 기록하고 YouTube에 나누는 걸 좋아해요. 좋은 품질도 좋은 디자인처럼, 결국 사람을 웃게 하기 위한 것이라 믿습니다 ☺︎"},
+    chat1:{zh:"欸你會幾種語言啊？😳",en:"wait how many languages do you speak?? 😳",ko:"너 언어 몇 개 해?? 😳"},
+    chat2:{zh:"五種～中、台、韓、西、英 ☺︎",en:"five ～ Mandarin, Taiwanese, Korean, Spanish, English ☺︎",ko:"다섯 개～ 중국어, 대만어, 한국어, 스페인어, 영어 ☺︎"},
+    chat3:{zh:"太扯了吧，那品質工程呢？",en:"that's wild. and the quality engineering?",ko:"대박… 품질 엔지니어링은?"},
+    chat4:{zh:"零召回，謝謝 💅",en:"zero recalls, thank you 💅",ko:"리콜 제로, 감사합니다 💅"},
+    footNote:{zh:"用工程師的精準，做讓人會心一笑的東西 ☺︎",en:"An engineer's precision, made to make people smile ☺︎",ko:"엔지니어의 정밀함으로, 사람을 웃게 만드는 것 ☺︎"}
+  },
+  work:[
+    {emoji:"🔧",title:"Flexium Interconnect",meta:{zh:"產品品質管理工程師 · 台灣 · 2022–24",en:"Product Quality Management Engineer · Taiwan · 2022–24",ko:"제품 품질 관리 엔지니어 · 대만 · 2022–24"},
+      desc:{zh:"開發並導入內部數據驗證系統，把資料處理量能拉高 150%；透過檢驗流程優化與跨部門驗證，做到 100% 出貨準確，還讓年度品質稽核分數提升 69.77%。",en:"Built and deployed an internal data-verification system that raised processing capacity by 150%; hit 100% shipping accuracy through streamlined inspection and cross-functional checks, and lifted the annual audit score by 69.77%.",ko:"내부 데이터 검증 시스템을 개발·도입해 처리 능력을 150% 높였고, 검사 최적화와 부서 간 검증으로 100% 출하 정확도를 달성하며 연간 감사 점수를 69.77% 향상시켰습니다."},tags:["Data System +150%","100% Shipping","Audit +69.77%"]},
+    {emoji:"🧪",title:"MEKTEC Manufacturing",meta:{zh:"品質保證工程師 · 台灣 · 2020–22",en:"Quality Assurance Engineer · Taiwan · 2020–22",ko:"품질 보증 엔지니어 · 대만 · 2020–22"},
+      desc:{zh:"用 Six Sigma 與 8D 主導重點客戶的根因分析，提升良率、減少浪費；整合客戶回饋平台讓滿意度 +15%，並嚴謹驗證檢驗清單與 SOP，達成產品零召回。",en:"Led root-cause analysis for key accounts with Six Sigma and 8D — improving yields and cutting waste; integrated customer-feedback platforms for a 15% satisfaction lift, and validated checklists and SOPs to reach zero recalls.",ko:"Six Sigma와 8D로 주요 고객의 근본 원인 분석을 주도해 수율을 높이고 낭비를 줄였으며, 고객 피드백 플랫폼 통합으로 만족도를 15% 높이고 체크리스트·SOP 검증으로 리콜 제로를 달성했습니다."},tags:["Six Sigma · 8D","Satisfaction +15%","Zero Recalls"]}
+  ],
+  other:[
+    {emoji:"📷",title:{zh:"攝影",en:"Photography",ko:"사진"},year:"ongoing",desc:{zh:"用鏡頭記錄光影、旅程與生活裡的小細節。",en:"Capturing light, travel, and the small details of everyday life.",ko:"빛과 여행, 일상의 작은 순간을 담습니다."},go:{zh:"看作品集 →",en:"View gallery →",ko:"갤러리 보기 →"},url:"#"},
+    {emoji:"▶",title:{zh:"YouTube 頻道",en:"YouTube Channel",ko:"YouTube 채널"},year:"ongoing",desc:{zh:"分享創作、留學生活與職涯學習。",en:"Sharing creative work, study-abroad life, and career learnings.",ko:"창작, 유학 생활, 커리어 이야기를 나눕니다."},go:{zh:"前往頻道 →",en:"Watch now →",ko:"채널 방문 →"},url:"#"},
+    {emoji:"✦",title:{zh:"TITAS 紡織展",en:"TITAS Textile Show",ko:"TITAS 섬유전"},year:"2018",desc:{zh:"擔任韓／中／英三語即時口譯志工，促成南韓參展商與國際買家的跨國採購洽談。",en:"Trilingual (KR/中/EN) interpreter volunteer, bridging South Korean exhibitors and global buyers to accelerate cross-border deals.",ko:"한/중/영 3개 언어 통역 봉사로 한국 전시업체와 글로벌 바이어의 거래를 도왔습니다."},go:{zh:"Taipei · 志工",en:"Taipei · Volunteer",ko:"타이베이 · 봉사"},url:"#"},
+    {emoji:"♪",title:{zh:"新生合唱比賽",en:"Freshman Choral",ko:"신입생 합창 대회"},year:"2015",desc:{zh:"統籌排練、整合編舞與聲音表現，帶著隊伍拿下全體新生組第一名 🥇",en:"Coordinated rehearsals, choreography and vocal dynamics — and led the team to 1st place among all freshman groups 🥇",ko:"연습·안무·보컬을 총괄해 전체 신입생 그룹 중 1위를 차지했습니다 🥇"},go:{zh:"🥇 First place",en:"🥇 First place",ko:"🥇 1위"},url:"#"}
+  ],
+  languages:[
+    {greet:"你好",name:"中文 / Mandarin",lvl:{zh:"母語",en:"Native",ko:"모국어"},pct:100},
+    {greet:"你好",name:"台語 / Taiwanese",lvl:{zh:"母語",en:"Native",ko:"모국어"},pct:100},
+    {greet:"안녕",name:"한국어 / Korean",lvl:{zh:"母語",en:"Native",ko:"모국어"},pct:100},
+    {greet:"¡Hola!",name:"Español",lvl:{zh:"母語級 · 西語系",en:"Native · BA major",ko:"모국어급 · 전공"},pct:100},
+    {greet:"Hi",name:"English",lvl:{zh:"專業工作",en:"Professional",ko:"업무 능통"},pct:85}
+  ],
+  order:["cooking","work","other","gallery","languages","about"]
+};
+
+/* ================= STATE / STORAGE ================= */
+const LS_KEY="lydia_site_content_v1";
+const LANGS=["zh","en","ko"];
+const LANG_LABEL={zh:"中",en:"EN",ko:"한"};
+const HTML_LANG={zh:"zh-Hant",en:"en",ko:"ko"};
+let LANG="zh", STATE=null, galleryBuilt=false;
+
+function clone(o){return JSON.parse(JSON.stringify(o));}
+function isObj(x){return x&&typeof x==="object"&&!Array.isArray(x);}
+function merge(def,ov){
+  if(Array.isArray(def)) return Array.isArray(ov)?ov:clone(def);
+  if(isObj(def)){const out={};for(const k in def)out[k]=merge(def[k], ov&&ov[k]!==undefined?ov[k]:undefined);return out;}
+  return ov!==undefined?ov:def;
+}
+let lsOversize=false;
+function saveLocal(){
+  if(lsOversize){flashSaved("內容較大，未存本機（請用匯出）");return;}
+  try{localStorage.setItem(LS_KEY,JSON.stringify(STATE));flashSaved();}
+  catch(e){lsOversize=true;flashSaved("內容較大，未存本機（請用匯出）");}
+}
+function loadLocal(){try{const r=localStorage.getItem(LS_KEY);return r?JSON.parse(r):null;}catch(e){return null;}}
+function flashSaved(msg){const s=document.getElementById("saved");if(!s)return;s.textContent=msg||"✓ 已儲存";clearTimeout(flashSaved._t);flashSaved._t=setTimeout(()=>s.textContent="",1600);}
+
+const t=(o)=>(o&&o[LANG])||(o&&o.en)||"";
+const IG_URL=()=>STATE.settings.instagram||"#";
+const IGICON=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:18px;height:18px"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>`;
+
+/* 動態載入 Google Fonts：打進字體名稱就自動抓（存在才顯示，否則自動退回備用字體） */
+const loadedFonts=new Set();
+const GENERIC=["serif","sans-serif","monospace","cursive","system-ui","ui-monospace","ui-serif","ui-sans-serif","-apple-system"];
+function loadGoogleFont(name){
+  name=(name||"").trim().replace(/^['"]|['"]$/g,"");
+  if(!name||GENERIC.includes(name.toLowerCase()))return;
+  if((STATE&&STATE.settings&&STATE.settings.customFonts||[]).some(f=>(f.name||"").toLowerCase()===name.toLowerCase()))return;
+  const key=name.toLowerCase();if(loadedFonts.has(key))return;loadedFonts.add(key);
+  const l=document.createElement("link");l.rel="stylesheet";
+  l.href="https://fonts.googleapis.com/css2?family="+encodeURIComponent(name).replace(/%20/g,"+")+"&display=swap";
+  document.head.appendChild(l);
+}
+function loadStack(stack){(stack||"").split(",").forEach(loadGoogleFont);}
+function loadAllFonts(){for(const l in STATE.settings.fonts){loadStack(STATE.settings.fonts[l].serif);loadStack(STATE.settings.fonts[l].sans);}}
+
+/* ================= VIEWER RENDER ================= */
+function applyFonts(){
+  const f=STATE.settings.fonts[LANG]||STATE.settings.fonts.en;
+  const S=document.documentElement.style;
+  S.setProperty("--serif",f.serif);S.setProperty("--sans",f.sans);
+  if(f.hand)S.setProperty("--hand",f.hand);
+  S.setProperty("--note",f.note||f.hand||"var(--hand)");
+  if(f.mono)S.setProperty("--mono",f.mono);
+}
+let _cfSig="";
+function injectCustomFonts(){
+  const cf=STATE.settings.customFonts||[];
+  const sig=cf.length+"|"+cf.map(f=>(f.name||"")+":"+((f.url||"").length)).join(",");
+  let el=document.getElementById("custom-fonts");
+  if(el&&sig===_cfSig)return;
+  _cfSig=sig;
+  if(!el){el=document.createElement("style");el.id="custom-fonts";document.head.appendChild(el);}
+  el.textContent=cf.map(f=>`@font-face{font-family:'${(f.name||"").replace(/'/g,"")}';src:url(${f.url});font-display:swap;}`).join("\n");
+}
+function renderStatic(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const k=el.getAttribute("data-i18n");if(STATE.ui[k])el.innerHTML=t(STATE.ui[k]);});
+  document.getElementById("about-body").innerHTML="<p>"+t(STATE.ui.aboutBody)+"</p>";
+}
+function renderLinks(){
+  const s=STATE.settings;
+  const e=document.getElementById("lnk-email");e.href="mailto:"+s.email;e.textContent="✉ "+s.email;
+  document.getElementById("lnk-linkedin").href=s.linkedin;
+  document.getElementById("lnk-ig").href=s.instagram;
+  document.getElementById("lnk-youtube").href=s.youtube;
+  const f=document.getElementById("ig-follow");f.href=s.instagram;
+  document.getElementById("ig-follow-icon").innerHTML=IGICON;
+  const h=(s.instagram.split("/").filter(Boolean).pop()||"").replace(/\?.*$/,"");
+  document.getElementById("ig-handle").textContent="@"+h;
+}
+function renderBrand(){
+  const s=STATE.settings;
+  const setTxt=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  setTxt("brand-name",s.brand);setTxt("brand-mono",s.monogram);setTxt("hero-name",s.heroName);
+  setTxt("footer-mini",s.footer);setTxt("chat-top",s.imessage);
+  (s.collage||[]).forEach((c,i)=>{setTxt("ph-"+i,c.emoji);setTxt("cap-"+i,c.cap);});
+  const st=s.stamp||{};setTxt("stamp-cn",st.cn);setTxt("stamp-en",st.en);
+}
+function renderWork(){
+  document.getElementById("work-list").innerHTML=STATE.work.map(w=>{
+    const ph=(w.photos||[]).filter(Boolean).slice(0,3);
+    const media=ph.length?`<div class="thumb photos n${ph.length}">${ph.map(u=>`<img src="${u}" alt="" loading="lazy">`).join("")}</div>`:`<div class="thumb">${w.emoji||"◆"}</div>`;
+    return `<div class="wcard">${media}<div>
+      <h3>${w.title||""}</h3><div class="wmeta">${t(w.meta)}</div><p>${t(w.desc)}</p>
+      <div class="wtags">${(w.tags||[]).map(x=>`<span>${x}</span>`).join("")}</div>
+    </div></div>`;}).join("");
+}
+function renderOther(){
+  document.getElementById("other-list").innerHTML=STATE.other.map(o=>`
+    <a class="ocard" href="${o.url||"#"}" target="_blank" rel="noopener">
+      <div class="emoji">${o.emoji||"✦"}</div><h4>${t(o.title)}</h4><div class="oy">${o.year||""}</div>
+      <p>${t(o.desc)}</p><span class="go">${t(o.go)}</span></a>`).join("");
+}
+function renderLangs(){
+  document.getElementById("lang-list").innerHTML=STATE.languages.map(l=>`
+    <div class="lcard"><div class="greet">${l.greet||""}</div><div class="lname">${l.name||""}</div></div>`).join("");
+}
+function renderGallery(force){
+  const grid=document.getElementById("gallery-grid");
+  const posts=(STATE.settings.igPosts||"").split("\n").map(s=>s.trim()).filter(u=>u.indexOf("instagram.com")>=0);
+  const feed=(STATE.settings.juicer||"").trim();
+  if(force)galleryBuilt=false;
+
+  if(posts.length){
+    grid.classList.remove("juicer");grid.classList.add("embed");
+    if(!galleryBuilt){
+      grid.innerHTML=posts.map(u=>`<blockquote class="instagram-media" data-instgrm-permalink="${u}" data-instgrm-version="14"></blockquote>`).join("");
+      if(!document.getElementById("ig-embed-js")){
+        const s=document.createElement("script");s.id="ig-embed-js";s.async=true;s.src="https://www.instagram.com/embed.js";document.body.appendChild(s);
+      }
+      galleryBuilt=true;
+    }
+    if(window.instgrm&&window.instgrm.Embeds)window.instgrm.Embeds.process();
+    return;
+  }
+
+  if(feed){
+    grid.classList.remove("embed");grid.classList.add("juicer");
+    if(!galleryBuilt){
+      grid.innerHTML=`<ul class="juicer-feed" data-feed-id="${feed}" data-columns="3" data-per="9"></ul>`;
+      let s=document.getElementById("juicer-js");
+      if(s)s.remove();
+      s=document.createElement("script");s.id="juicer-js";s.async=true;s.defer=true;
+      s.src="https://www.juicer.io/embed/"+feed+"/embed-code.js";document.body.appendChild(s);
+      galleryBuilt=true;
+    } else if(window.juicer&&window.juicer.load){try{window.juicer.load();}catch(e){}}
+    return;
+  }
+
+  grid.classList.remove("juicer","embed");grid.innerHTML="";
+}
+function renderContent(){injectCustomFonts();applyFonts();renderBrand();renderStatic();renderLinks();renderWork();renderOther();renderLangs();}
+function applyOrder(){const main=document.querySelector("main");(STATE.order||[]).forEach(id=>{const el=document.getElementById(id);if(el)main.appendChild(el);});}
+function renderAll(){renderContent();renderGallery();applyOrder();}
+
+function setLang(lang){
+  LANG=lang;document.documentElement.setAttribute("lang",HTML_LANG[lang]);
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+  renderContent();
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}})},{threshold:.1});
+function observe(){document.querySelectorAll(".cooking,.wcard,.ocard,.lcard,.about-grid,.chat").forEach(el=>{el.classList.add("reveal");io.observe(el);});}
+
+/* ================= BOOT ================= */
+async function boot(){
+  let data=null;
+  try{const r=await fetch("content.json",{cache:"no-store"});if(r.ok)data=await r.json();}catch(e){}
+  if(!data&&window.__SEED__)data=window.__SEED__;
+  if(!data)data=loadLocal();
+  STATE=data?merge(DEFAULTS,data):clone(DEFAULTS);
+  loadAllFonts();
+  renderAll();observe();
+}
+boot();
+</script>
+</body>
+</html>
