@@ -12,7 +12,7 @@
   --cream:#F5EFE3;--cream-2:#FBF7EF;--card:#FFFDF8;--ink:#2B2723;--ink-soft:#6E655A;--ink-faint:#A79C8C;
   --line:#E4DBC9;--coral:#E8664E;--coral-deep:#C94A34;--butter:#F4C95D;--sky:#87A9C9;--sage:#7FA98F;--grape:#A488C0;
   --serif:'Fraunces','Noto Serif TC',serif;--sans:'Inter','Noto Sans TC',sans-serif;
-  --hand:'Caveat',cursive;--note:'Caveat',cursive;--mono:'Space Mono',ui-monospace,monospace;--max:1100px;
+  --hand:'Caveat',cursive;--note:'Caveat',cursive;--mono:'Space Mono',ui-monospace,monospace;--max:1280px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -33,10 +33,10 @@ header{position:sticky;top:0;z-index:60;backdrop-filter:blur(8px);background:lin
 .lang button.active{background:var(--ink);color:var(--cream)}
 .lang button:hover:not(.active){background:var(--cream-2)}
 
-.hero{position:relative;padding:60px 0 44px;min-height:64vh;display:flex;align-items:center;justify-content:center;text-align:center}
+.hero{position:relative;padding:48px 0 40px;min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center}
 .hero-inner{max-width:640px;margin:0 auto;position:relative;z-index:2}
 .hi{font-family:var(--hand);font-size:1.9rem;color:var(--coral);transform:rotate(-2deg);display:inline-block}
-.hero h1{font-family:var(--hand);font-weight:700;font-size:clamp(4rem,10vw,7rem);line-height:.92;letter-spacing:.01em;margin:0 0 2px}
+.hero h1{font-family:var(--hand);font-weight:700;font-size:clamp(2.9rem,11vw,7rem);line-height:.92;letter-spacing:.01em;margin:0 0 2px}
 .hero h1 em{font-style:italic;color:var(--coral)}
 .kicker{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--ink-soft);margin-top:4px}
 .thesis{font-family:var(--mono);font-size:clamp(.82rem,1.5vw,.98rem);line-height:1.95;color:var(--ink-soft);max-width:520px;margin:22px auto 0}
@@ -65,6 +65,16 @@ header{position:sticky;top:0;z-index:60;backdrop-filter:blur(8px);background:lin
 @media(max-width:900px){.hero{min-height:auto;padding:46px 0 30px}.decor{display:none}}
 
 section{padding:64px 0}
+@media(max-width:900px){section{padding:52px 0}.wrap{padding:0 22px}}
+@media(max-width:600px){
+  section{padding:40px 0}
+  .wrap{padding:0 16px}
+  .hero{padding:32px 0 26px}
+  .wcard{padding:15px;gap:16px}
+  .wcard .thumb{height:150px}
+  .ocard{padding:18px}
+  .nav{height:60px}
+}
 .mark{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,4vw,2.3rem);display:flex;align-items:center;gap:12px;margin-bottom:8px}
 .mark .sym{color:var(--coral)}
 .sub{color:var(--ink-soft);margin-bottom:32px}
