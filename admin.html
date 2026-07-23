@@ -8,6 +8,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=Caveat:wght@500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+TC:wght@500;600;700&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet" />
 <style>
+/* ==========================================
+   最終版：黑色外框 + 粉藍色字底的卡片刷開特效
+========================================== */
+.ocard .go {
+  position: relative;
+  text-decoration: none !important;
+  color: #BDEFF7 !important; /* 強制設定字體本身為粉藍色 */
+  font-weight: 700;
+  
+  /* 俐落的黑色外框（精準設定 1px 避免粗糙疊影） */
+  text-shadow: -1px 0 #2B2723, 0 1px #2B2723, 1px 0 #2B2723, 0 -1px #2B2723 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  border-bottom: none !important;
+  padding-bottom: 0;
+  background: transparent !important;
+}
+
+.ocard .go::after {
+  content: attr(data-text); 
+  color: #BEC6F7 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  /* 配合卡片底色 #FFFDF8 的遮罩陰影，讓未刷開的部分完美融合背景 */
+  text-shadow: -1px 0 #FFFDF8, 0 1px #FFFDF8, 1px 0 #FFFDF8, 0 -1px #FFFDF8 !important;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transition: width 1s ease; /* 舒適流暢的動畫速度 */
+  transition: width 1s ease;
+}
+
+.ocard .go:hover::after {
+  width: 0%;
+}
 :root{
   --cream:#F5EFE3;--cream-2:#FBF7EF;--card:#FFFDF8;--ink:#2B2723;--ink-soft:#6E655A;--ink-faint:#A79C8C;
   --line:#E4DBC9;--coral:#E8664E;--coral-deep:#C94A34;--butter:#F4C95D;--sky:#87A9C9;--sage:#7FA98F;--grape:#A488C0;
@@ -16,11 +54,11 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:transparent;color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}::selection{background:var(--coral);color:#fff}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 26px}
 
-header{position:sticky;top:0;z-index:60;backdrop-filter:blur(8px);background:linear-gradient(var(--cream),rgba(245,239,227,.6))}
+header{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);background:transparent}
 .nav{display:flex;align-items:center;justify-content:flex-end;height:70px}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:600;font-size:1.25rem}
 .brand .blob{width:32px;height:32px;background:var(--coral);color:#fff;display:grid;place-items:center;border-radius:50% 50% 50% 12px;font-family:var(--serif);font-weight:600;transform:rotate(-6deg)}
@@ -208,9 +246,65 @@ footer{padding:40px 0 60px;text-align:center}
 #admin-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .admin-overlay.open{opacity:1;pointer-events:auto}
 @media(max-width:520px){.admin{width:100%}}
+/* ★ 貼在這裡：背景專屬 CSS 開始 ★ */
+.background {
+    position: fixed; 
+    z-index: -1;     
+    overflow: hidden;
+    width: 100vw;    
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #c5eafc, #fff1ad);
+    display: flex;
+    flex-grow: 1;
+}
+
+.background div {
+    position: absolute;
+    border-radius: 100%;
+    height: 0;
+    filter: blur(120px); 
+    opacity: 0.4;
+}
+
+.background div:nth-child(1) {
+    background: linear-gradient(132deg, #1FCFC3 0.00%, #1F91CF 100.00%);
+    width: 30%;
+    padding-top: 30%;
+    left: 39%;
+    top: 22%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.background div:nth-child(2) {
+    background: linear-gradient(132deg, #0800FF 0.00%, #E32BE3 100.00%);
+    width: 40%;
+    padding-top: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.background div:nth-child(3) {
+    background: linear-gradient(132deg, #1FCFC3 0.00%, #1F91CF 100.00%);
+    width: 30%;
+    padding-top: 30%;
+    left: 80%;
+    top: 80%;
+    transform: translateX(-50%) translateY(-50%);
+}
+/* ★ 背景專屬 CSS 結束 ★ */
 </style>
 </head>
 <body>
+<!-- ★ 漸層背景 ★ -->
+<div class="background">
+   <div></div>
+   <div></div>
+   <div></div>
+</div>
+
 
 <header>
   <div class="wrap nav">
@@ -483,9 +577,10 @@ function renderWork(){
 function renderOther(){
   document.getElementById("other-list").innerHTML=STATE.other.map(o=>{
     const u=o.url||"#";const ext=/^https?:\/\//i.test(u);
+    const goText=t(o.go); /* 抓取當前語言的按鈕文字 */
     return `<a class="ocard" href="${u}"${ext?' target="_blank" rel="noopener"':''}>
       <div class="emoji">${o.emoji||"✦"}</div><h4>${t(o.title)}</h4><div class="oy">${o.year||""}</div>
-      <p>${t(o.desc)}</p><span class="go">${t(o.go)}</span></a>`;}).join("");
+      <p>${t(o.desc)}</p><span class="go" data-text="${goText}">${goText}</span></a>`;}).join("");
 }
 function renderLangs(){
   document.getElementById("lang-list").innerHTML=STATE.languages.map(l=>`

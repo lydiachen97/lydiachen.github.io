@@ -8,7 +8,7 @@
 <style>
 :root{--cream:#F5EFE3;--card:#FFFDF8;--ink:#2B2723;--soft:#6E655A;--faint:#A79C8C;--line:#E4DBC9;--coral:#E8664E;--butter:#F4C95D}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--cream);color:var(--ink);font-family:'Noto Sans TC',sans-serif;padding:36px 20px 60px}
+body{background:transparent;color:var(--ink);font-family:'Noto Sans TC',sans-serif;padding:36px 20px 60px}
 .wrap{max-width:1100px;margin:0 auto}
 .top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:8px}
 a.back{font-family:'Space Mono',monospace;font-size:.82rem;color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:20px;padding:7px 16px;background:var(--card);box-shadow:3px 3px 0 var(--ink)}
@@ -24,20 +24,71 @@ h1{font-family:'Fraunces','Noto Sans TC',serif;font-weight:600;font-size:2.4rem}
 .lb.show{display:flex}
 .lb img{max-width:96vw;max-height:92vh;border-radius:10px}
 .foot{text-align:center;color:var(--faint);font-family:'Space Mono',monospace;font-size:.72rem;margin-top:40px}
+/* ★ 貼在這裡：背景專屬 CSS 開始 ★ */
+.background {
+    position: fixed; 
+    z-index: -1;     
+    overflow: hidden;
+    width: 100vw;    
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #c5eafc, #fff1ad);
+    display: flex;
+    flex-grow: 1;
+}
+
+.background div {
+    position: absolute;
+    border-radius: 100%;
+    height: 0;
+    filter: blur(120px); 
+    opacity: 0.4;
+}
+
+.background div:nth-child(1) {
+    background: linear-gradient(132deg, #1FCFC3 0.00%, #1F91CF 100.00%);
+    width: 30%;
+    padding-top: 30%;
+    left: 39%;
+    top: 22%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.background div:nth-child(2) {
+    background: linear-gradient(132deg, #0800FF 0.00%, #E32BE3 100.00%);
+    width: 40%;
+    padding-top: 40%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.background div:nth-child(3) {
+    background: linear-gradient(132deg, #1FCFC3 0.00%, #1F91CF 100.00%);
+    width: 30%;
+    padding-top: 30%;
+    left: 80%;
+    top: 80%;
+    transform: translateX(-50%) translateY(-50%);
+}
+/* ★ 背景專屬 CSS 結束 ★ */
 </style>
 </head>
 <body>
+<!-- ★ 漸層背景 ★ -->
+<div class="background">
+   <div></div>
+   <div></div>
+   <div></div>
+</div>
+
 <div class="wrap">
   <div class="top">
     <h1 id="title">作品集</h1>
     <a class="back" href="index.html">← 回首頁</a>
   </div>
   <p class="sub" id="sub">用鏡頭記錄光影、旅程與生活裡的小細節。</p>
-  <!-- ★ 音樂播放器貼在這裡 ★ -->
-  <div style="margin-bottom: 24px; max-width: 100%;">
-    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/2zEdi42kfgLEySoikGJMFT?utm_source=generator&si=ec1b8071c1ea4a96" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
-   <!-- ★ 結束 ★ -->
   <div class="grid" id="grid"></div>
   <div class="empty" id="empty" style="display:none">還沒有照片。到後台「作品集相簿頁」加入照片路徑，或把照片放進 images/ 資料夾。</div>
   <p class="foot">Lydia · Gallery</p>
